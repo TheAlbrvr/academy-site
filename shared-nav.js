@@ -68,14 +68,8 @@
       <ul class="footer-list">
         <li>📍 <strong style="color:rgba(255,255,255,0.7)">Bovolenta</strong><br>Piazza Accademia 24, 35024</li>
         <li>📍 <strong style="color:rgba(255,255,255,0.7)">Valli di Chioggia</strong><br>SS Romea 578, 30015</li>
-        <li><a href="https://www.cooperto.link/e19e38" target="_blank">🛒 Ordina - Bovolenta / Valli </a></li>
+        <li><a href="https://www.cooperto.link/e19e38" target="_blank">🛒 Prenota - Bovolenta / Valli </a></li>
       </ul>
-    </div>
-    <div>
-      <h4 class="footer-col-title">Orari</h4>
-      <div class="footer-hours-item"><span>Lun–Mar</span><span style="color:rgba(255,80,80,0.7)">Chiuso</span></div>
-      <div class="footer-hours-item"><span>Mer–Dom</span><span>18:30 – 23:30</span></div>
-      <p style="font-size:.72rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic">* Verifica sempre su Instagram eventuali chiusure speciali</p>
     </div>
   </div>
   <div class="footer-bottom">
