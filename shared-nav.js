@@ -5,11 +5,7 @@
   const nav = `
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-badge">🍔</div>
-    <div class="nav-logo-text">
-      <span class="t1">ACADEMY</span>
-      <span class="t2">Evergreen Burger</span>
-    </div>
+  <img src="academy-img.png" alt="ACADEMY Evergreen Burger" width="30%" height="auto" >
   </a>
   <ul class="nav-links">
     <li><a href="index.html"    class="${p==='home'     ?'active':''}">Home</a></li>
@@ -57,11 +53,6 @@
       <div class="footer-logo">ACADEMY</div>
       <div class="footer-logo-sub">Evergreen Burger · Bakery &amp; American Pizza</div>
       <p class="footer-tagline">L'Accademia del Burger XXL. Qualità vera, ingredienti selezionati, porzioni che non lasciano mai fame. Due sedi, una sola filosofia.</p>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/academy_evergreenburger/" target="_blank" class="social-link">📸</a>
-        <a href="https://www.facebook.com/Academy-evergreen-burger" target="_blank" class="social-link">📘</a>
-        <a href="https://wa.me/39XXXXXXXXXX" target="_blank" class="social-link">💬</a>
-      </div>
     </div>
     <div>
       <h4 class="footer-col-title">Navigazione</h4>
@@ -76,18 +67,15 @@
       <h4 class="footer-col-title">Le Sedi</h4>
       <ul class="footer-list">
         <li>📍 <strong style="color:rgba(255,255,255,0.7)">Bovolenta</strong><br>Piazza Accademia 24, 35024</li>
-        <li>📍 <strong style="color:rgba(255,255,255,0.7)">Valli di Chioggia</strong><br>Via [DA INSERIRE]</li>
-        <li><a href="https://www.cooperto.link/e19e38" target="_blank">🛒 Ordina – Bovolenta</a></li>
-        <li><a href="#" target="_blank">🛒 Ordina – Valli</a></li>
+        <li>📍 <strong style="color:rgba(255,255,255,0.7)">Valli di Chioggia</strong><br>SS Romea 578, 30015</li>
+        <li><a href="https://www.cooperto.link/e19e38" target="_blank">🛒 Ordina - Bovolenta / Valli </a></li>
       </ul>
     </div>
     <div>
       <h4 class="footer-col-title">Orari</h4>
       <div class="footer-hours-item"><span>Lun–Mar</span><span style="color:rgba(255,80,80,0.7)">Chiuso</span></div>
-      <div class="footer-hours-item"><span>Mer–Ven</span><span>00:00 – 00:00</span></div>
-      <div class="footer-hours-item"><span>Sabato</span><span>00:00 – 00:00</span></div>
-      <div class="footer-hours-item"><span>Domenica</span><span>00:00 – 00:00</span></div>
-      <p style="font-size:.72rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic">* Verifica sempre su Instagram</p>
+      <div class="footer-hours-item"><span>Mer–Dom</span><span>18:30 – 23:30</span></div>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.28);margin-top:10px;font-style:italic">* Verifica sempre su Instagram eventuali chiusure speciali</p>
     </div>
   </div>
   <div class="footer-bottom">
