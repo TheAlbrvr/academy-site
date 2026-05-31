@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menù & Sedi — ACADEMY Evergreen Burger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ============================================================
+   MENU PAGE
+   ============================================================ */
+.page-hero {
+  min-height: 38vh; display: flex; align-items: flex-end;
+  padding: 80px 24px 48px; position: relative; overflow: hidden;
+  background: var(--navy-dark);
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,197,24,0.07) 1px, transparent 1px);
+  background-size: 26px 26px; pointer-events: none;
+}
+.page-hero-stripes {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(-55deg, transparent, transparent 60px,
+    rgba(245,197,24,0.02) 60px, rgba(245,197,24,0.02) 62px);
+}
+.page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+.page-hero-label {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 0.72rem;
+  letter-spacing: 0.35em; text-transform: uppercase; color: var(--yellow);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.page-hero-label::before { content: '★'; font-size: 0.6rem; }
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.88; text-transform: uppercase; color: var(--white);
+  text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3);
+}
+.page-hero-title .yellow { color: var(--yellow); }
+.page-hero-sub {
+  font-family: var(--font-oswald); font-size: 0.95rem; font-weight: 500;
+  color: rgba(255,255,255,0.5); letter-spacing: 0.12em; margin-top: 12px;
+  text-transform: uppercase;
+}
+
+/* ---- TABS ---- */
+.sede-tabs-wrap {
+  background: var(--navy); border-bottom: 4px solid var(--yellow);
+  position: sticky; top: 66px; z-index: 100;
+}
+.sede-tabs { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; }
+.tab-btn {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); background: transparent;
+  border: none; border-bottom: 4px solid transparent;
+  padding: 16px 26px; cursor: pointer; margin-bottom: -4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-btn:hover { color: var(--cream); }
+.tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
+/* ---- SEDE SECTION ---- */
+.sede-section { padding: 72px 24px; background: var(--cream); }
+.sede-section:nth-child(even) { background: var(--cream-dark); }
+.sede-section.hidden { display: none; }
+.sede-inner { max-width: 1200px; margin: 0 auto; }
+
+.sede-top {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: start; gap: 36px; margin-bottom: 48px;
+}
+.sede-num {
+  font-family: var(--font-display); font-size: 5rem;
+  color: rgba(26,58,107,0.1); line-height: 1; margin-bottom: -16px;
+}
+.sede-title {
+  font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 0.9; color: var(--navy);
+  text-shadow: 3px 3px 0 rgba(26,58,107,0.15);
+}
+.sede-title .red { color: var(--red); }
+.sede-address {
+  font-family: var(--font-cond); font-size: 0.92rem; font-weight: 700;
+  color: var(--brown-light); letter-spacing: 0.08em; margin-top: 10px;
+}
+.sede-ctas { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.sede-phone {
+  font-family: var(--font-display); font-size: 1.6rem;
+  color: var(--red); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  text-shadow: 2px 2px 0 rgba(200,34,42,0.2);
+  transition: color 0.2s;
+}
+.sede-phone:hover { color: var(--red-dark); }
+
+/* ---- MENU GRID ---- */
+.menu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 44px; }
+
+.menu-cat {
+  background: var(--white); border: 3px solid var(--navy);
+  box-shadow: 5px 5px 0 var(--navy-dark); padding: 24px;
+  position: relative;
+}
+/* corner stars */
+.menu-cat::before {
+  content: '★';
+  position: absolute; top: 8px; right: 10px;
+  font-size: 0.8rem; color: var(--yellow); opacity: 0.5;
+}
+.menu-cat-icon { font-size: 1.7rem; margin-bottom: 8px; }
+.menu-cat-title {
+  font-family: var(--font-display); font-size: 1.5rem;
+  color: var(--navy); letter-spacing: 0.03em; margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed rgba(26,58,107,0.2);
+}
+.menu-sub-title {
+  font-family: var(--font-display); font-size: 1.1rem;
+  color: var(--red); margin: 14px 0 10px;
+}
+.menu-divider { height: 2px; background: rgba(26,58,107,0.08); margin: 14px 0; border: none; }
+
+.menu-item {
+  padding: 9px 0; border-bottom: 1px dashed rgba(26,58,107,0.12);
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
+}
+.menu-item:last-of-type { border-bottom: none; }
+.menu-item-name {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.9rem;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy-dark);
+}
+.menu-item-desc {
+  font-size: 0.76rem; color: var(--brown-light); font-weight: 400;
+  line-height: 1.4; margin-top: 2px;
+}
+.menu-item-price {
+  font-family: var(--font-display); font-size: 1.1rem;
+  color: var(--red); white-space: nowrap; flex-shrink: 0;
+}
+.menu-note {
+  font-size: 0.72rem; color: var(--brown-light); font-style: italic;
+  margin-top: 14px; opacity: 0.6; line-height: 1.5;
+}
+
+/* ---- ORDINA BOX ---- */
+.ordina-box {
+  background: var(--navy); border: 4px solid var(--yellow);
+  box-shadow: 6px 6px 0 var(--navy-dark);
+  padding: 28px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.ordina-title { font-family: var(--font-display); font-size: 2rem; color: var(--yellow); letter-spacing: 0.02em; text-shadow: 2px 2px 0 var(--navy-dark); }
+.ordina-sub   { font-family: var(--font-oswald); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); margin-top: 3px; text-transform: uppercase; }
+.ordina-btns  { display: flex; gap: 10px; flex-wrap: wrap; }
+
+@media(max-width:900px){
+  .menu-grid { grid-template-columns: 1fr; }
+  .sede-top  { grid-template-columns: 1fr; }
+  .sede-ctas { align-items: flex-start; }
+  .ordina-box { flex-direction: column; }
+}
+</style>
+</head>
+<body data-page="menu">
+<div id="ticker-anchor"></div>
+
+<div class="page-hero">
+  <div class="page-hero-stripes"></div>
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Academy Evergreen Burger</p>
+    <h1 class="page-hero-title">Menù &amp;<br><span class="yellow">Sedi</span></h1>
+    <p class="page-hero-sub">★ Due sedi · Un'unica filosofia · Tutto XXL · Qualità vera ★</p>
+  </div>
+</div>
+
+<!-- SEDE TABS -->
+<div class="sede-tabs-wrap">
+  <div class="sede-tabs">
+    <button class="tab-btn active" onclick="showSede('bovolenta',this)">📍 Bovolenta</button>
+    <button class="tab-btn"        onclick="showSede('valli',this)">📍 Valli di Chioggia</button>
+  </div>
+</div>
+
+<!-- ================================================================
+     SEDE 1 — BOVOLENTA
+     ================================================================ -->
+<section class="sede-section" id="bovolenta">
+  <div class="sede-inner">
+
+    <div class="sede-top reveal">
+      <div>
+        <div class="sede-num">01</div>
+        <h2 class="sede-title">Sede di<br><span class="red">Bovolenta</span></h2>
+        <!-- =====================================================
+             INDIRIZZO: Aggiorna se necessario
+             ===================================================== -->
+        <p class="sede-address">📍 Piazza Accademia 24, 35024 Bovolenta (PD) &nbsp;·&nbsp; Chiuso Lunedì e Martedì</p>
+      </div>
+      <div class="sede-ctas">
+        <!-- =====================================================
+             TELEFONO BOVOLENTA: Sostituisci con il numero reale
+             ===================================================== -->
+        <a href="tel:+393515846881" class="sede-phone">☎ 351 584 6881</a>
+        <a href="https://www.cooperto.link/e19e38" target="_blank" class="btn-red">🛒 Ordina Online ↗</a>
+        <a href="https://maps.google.com/?q=Piazza+Accademia+24,+Bovolenta" target="_blank" class="btn-navy">🗺️ Apri in Maps</a>
+      </div>
+    </div>
+
+    <div class="menu-grid reveal">
+
+      <!-- BURGER XXL -->
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🍔</div>
+        <h3 class="menu-cat-title">Burger XXL</h3>
+        <!-- =====================================================
+             BURGER: Sostituisci nome, descrizione e prezzo
+             ===================================================== -->
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 1</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 2</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 3</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 4</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 5</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Nome Burger 6</div><div class="menu-item-desc">Descrizione ingredienti</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <p class="menu-note">★ Copia .menu-item per aggiungere altri piatti</p>
+      </div>
+
+      <!-- CHICAGO PIZZA + HOT DOG -->
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🍕</div>
+        <h3 class="menu-cat-title">Chicago's Pizza</h3>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Chicago Pizza 1</div><div class="menu-item-desc">Topping e formato (700/900 gr circa)</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Chicago Pizza 2</div><div class="menu-item-desc">Topping e formato</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Chicago Pizza 3</div><div class="menu-item-desc">Topping e formato</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <p class="menu-note">★ Consulta il listino completo in cassa</p>
+        <hr class="menu-divider">
+        <div class="menu-sub-title">🌭 Hot Dog & Wurstel</div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Hot Dog Classic</div><div class="menu-item-desc">Descrizione</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Wurstel XXL</div><div class="menu-item-desc">Descrizione</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Hot Dog Speciale</div><div class="menu-item-desc">Descrizione</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+      </div>
+
+      <!-- BURRITOS + CONTORNI -->
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🌯</div>
+        <h3 class="menu-cat-title">Burritos</h3>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Burrito Classic</div><div class="menu-item-desc">Ripieno classico</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Burrito XXL</div><div class="menu-item-desc">Versione maxi</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Burrito Speciale</div><div class="menu-item-desc">Ingredienti speciali</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <hr class="menu-divider">
+        <div class="menu-sub-title">🍟 Contorni & Extras</div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Patatine XXL</div><div class="menu-item-desc">Porzione abbondante</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Onion Rings</div><div class="menu-item-desc">In pastella croccante</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Apetizer / Fritto</div><div class="menu-item-desc">Vedi il listino — Voglia di fritto?</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+        <div class="menu-item">
+          <div><div class="menu-item-name">Bibite / Drinks</div><div class="menu-item-desc">Coca-Cola, Fanta, acqua, birra…</div></div>
+          <div class="menu-item-price">€00</div>
+        </div>
+      </div>
+
+    </div><!-- /menu-grid -->
+
+    <div class="ordina-box reveal">
+      <div>
+        <div class="ordina-title">Ordina a Bovolenta</div>
+        <div class="ordina-sub">Delivery &amp; Asporto · Per prenotazioni chiamaci</div>
+      </div>
+      <div class="ordina-btns">
+        <a href="tel:+393515846881" class="btn-yellow">☎ 351 584 6881</a>
+        <a href="https://www.cooperto.link/e19e38" target="_blank" class="btn-red">🛒 Ordina Online ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     SEDE 2 — VALLI DI CHIOGGIA
+     ================================================================ -->
+<section class="sede-section hidden" id="valli">
+  <div class="sede-inner">
+
+    <div class="sede-top reveal">
+      <div>
+        <div class="sede-num">02</div>
+        <h2 class="sede-title">Sede di<br><span class="red">Valli di Chioggia</span></h2>
+        <!-- =====================================================
+             INDIRIZZO VALLI: Sostituisci con l'indirizzo reale
+             ===================================================== -->
+        <p class="sede-address">📍 Via [DA INSERIRE], Valli di Chioggia (VE)</p>
+      </div>
+      <div class="sede-ctas">
+        <!-- =====================================================
+             TELEFONO VALLI: Sostituisci con il numero reale
+             ===================================================== -->
+        <a href="tel:+390410000000" class="sede-phone">☎ +39 041 000 0000</a>
+        <a href="#" target="_blank" class="btn-red">🛒 Ordina Online – Valli ↗</a>
+        <a href="https://maps.google.com/?q=Valli+di+Chioggia" target="_blank" class="btn-navy">🗺️ Apri in Maps</a>
+      </div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🍔</div>
+        <h3 class="menu-cat-title">Burger XXL</h3>
+        <div class="menu-item"><div><div class="menu-item-name">Nome Burger 1 – Valli</div><div class="menu-item-desc">Descrizione ingredienti</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Nome Burger 2 – Valli</div><div class="menu-item-desc">Descrizione ingredienti</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Nome Burger 3 – Valli</div><div class="menu-item-desc">Descrizione ingredienti</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Nome Burger 4 – Valli</div><div class="menu-item-desc">Descrizione ingredienti</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Nome Burger 5 – Valli</div><div class="menu-item-desc">Descrizione ingredienti</div></div><div class="menu-item-price">€00</div></div>
+        <p class="menu-note">★ Aggiungi .menu-item per altri piatti</p>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🍕</div>
+        <h3 class="menu-cat-title">Chicago's Pizza</h3>
+        <div class="menu-item"><div><div class="menu-item-name">Chicago Pizza 1 – Valli</div><div class="menu-item-desc">Descrizione</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Chicago Pizza 2 – Valli</div><div class="menu-item-desc">Descrizione</div></div><div class="menu-item-price">€00</div></div>
+        <hr class="menu-divider">
+        <div class="menu-sub-title">🌯 Burritos</div>
+        <div class="menu-item"><div><div class="menu-item-name">Burrito – Valli</div><div class="menu-item-desc">Ripieno</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Burrito XXL – Valli</div><div class="menu-item-desc">Versione maxi</div></div><div class="menu-item-price">€00</div></div>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-icon">🌭</div>
+        <h3 class="menu-cat-title">Hot Dog & Extras</h3>
+        <div class="menu-item"><div><div class="menu-item-name">Hot Dog XXL – Valli</div><div class="menu-item-desc">Descrizione</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Wurstel Speciale</div><div class="menu-item-desc">Descrizione</div></div><div class="menu-item-price">€00</div></div>
+        <hr class="menu-divider">
+        <div class="menu-sub-title">🍟 Contorni</div>
+        <div class="menu-item"><div><div class="menu-item-name">Patatine XXL</div><div class="menu-item-desc">Croccanti</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Onion Rings</div><div class="menu-item-desc">In pastella</div></div><div class="menu-item-price">€00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Bibite / Drinks</div><div class="menu-item-desc">Coca-Cola, acqua, birra…</div></div><div class="menu-item-price">€00</div></div>
+      </div>
+    </div>
+
+    <div class="ordina-box reveal">
+      <div>
+        <div class="ordina-title">Ordina a Valli di Chioggia</div>
+        <div class="ordina-sub">Delivery &amp; Asporto · Per prenotazioni chiamaci</div>
+      </div>
+      <div class="ordina-btns">
+        <a href="tel:+390410000000" class="btn-yellow">☎ +39 041 000 0000</a>
+        <a href="#" target="_blank" class="btn-red">🛒 Ordina Online ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="shared-nav.js"></script>
+<script>
+function showSede(id, btn) {
+  document.querySelectorAll('.sede-section').forEach(s => s.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.remove('hidden');
+  btn.classList.add('active');
+  document.querySelectorAll('#' + id + ' .reveal').forEach(el => {
+    el.classList.remove('visible');
+    setTimeout(() => el.classList.add('visible'), 80);
+  });
+}
+</script>
+</body>
+</html>

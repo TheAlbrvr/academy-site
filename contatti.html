@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti — ACADEMY Evergreen Burger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ============================================================
+   CONTATTI PAGE
+   ============================================================ */
+.page-hero {
+  min-height: 36vh; display: flex; align-items: flex-end;
+  padding: 80px 24px 48px; position: relative; overflow: hidden;
+  background: var(--navy-dark);
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,197,24,0.07) 1px, transparent 1px);
+  background-size: 26px 26px; pointer-events: none;
+}
+.page-hero-stripes {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(-55deg, transparent, transparent 60px,
+    rgba(245,197,24,0.025) 60px, rgba(245,197,24,0.025) 62px);
+}
+.page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+.page-hero-label {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 0.72rem;
+  letter-spacing: 0.35em; text-transform: uppercase; color: var(--yellow);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.page-hero-label::before { content: '★'; }
+.page-hero-title {
+  font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.88; text-transform: uppercase; color: var(--white);
+  text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3);
+}
+.page-hero-title .yellow { color: var(--yellow); }
+.page-hero-sub {
+  font-family: var(--font-oswald); font-size: 0.95rem; font-weight: 500;
+  color: rgba(255,255,255,0.5); letter-spacing: 0.12em; margin-top: 12px; text-transform: uppercase;
+}
+
+/* ---- SEDI CONTATTI ---- */
+#sedi-contatti { padding: 72px 24px; background: var(--cream); }
+.sedi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 0 auto; }
+
+.sede-card {
+  background: var(--white); border: 4px solid var(--navy);
+  box-shadow: 7px 7px 0 var(--navy-dark); overflow: hidden;
+}
+.sede-card-header {
+  background: var(--navy); padding: 14px 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sede-card-num {
+  font-family: var(--font-display); font-size: 2.2rem; color: rgba(245,197,24,0.3); line-height: 1;
+}
+.sede-card-title-wrap {}
+.sede-card-name {
+  font-family: var(--font-display); font-size: 1.8rem;
+  color: var(--yellow); letter-spacing: 0.03em;
+  text-shadow: 2px 2px 0 var(--navy-dark);
+}
+.sede-card-sub {
+  font-family: var(--font-oswald); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45);
+}
+.sede-card-body { padding: 24px; }
+.sede-card-address {
+  font-family: var(--font-cond); font-size: 0.92rem; font-weight: 700;
+  color: var(--brown-light); margin-bottom: 20px; line-height: 1.5;
+  padding-bottom: 14px; border-bottom: 2px dashed rgba(26,58,107,0.15);
+}
+
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.contact-link {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--cream); border: 2px solid rgba(26,58,107,0.15);
+  padding: 13px 16px; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+}
+.contact-link:hover { transform: translateX(4px); }
+.contact-link.phone-link:hover { border-color: var(--navy); background: rgba(26,58,107,0.05); }
+.contact-link.wa-link:hover    { border-color: #25d366; background: rgba(37,211,102,0.05); }
+.contact-link.ig-link:hover    { border-color: #e1306c; background: rgba(225,48,108,0.05); }
+.contact-link.order-link:hover { border-color: var(--red); background: rgba(200,34,42,0.05); }
+.contact-link.maps-link:hover  { border-color: #4285f4; background: rgba(66,133,244,0.05); }
+
+.contact-link-icon { font-size: 1.5rem; flex-shrink: 0; width: 28px; text-align: center; }
+.contact-link-label {
+  font-family: var(--font-oswald); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--brown-light); display: block;
+}
+.contact-link-value {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.98rem;
+  letter-spacing: 0.04em; color: var(--navy-dark); display: block; margin-top: 1px;
+}
+.contact-link-value.green  { color: #25d366; }
+.contact-link-value.pink   { color: #e1306c; }
+.contact-link-value.red    { color: var(--red); }
+.contact-link-value.blue   { color: #4285f4; }
+
+/* ---- ORARI ---- */
+#orari { padding: 72px 24px; background: var(--cream-dark); border-top: 4px dashed rgba(26,58,107,0.2); }
+.orari-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 0 auto; }
+.orari-card {
+  background: var(--white); border: 3px solid var(--navy);
+  box-shadow: 5px 5px 0 var(--navy-dark); padding: 28px;
+}
+.orari-card-title {
+  font-family: var(--font-display); font-size: 2rem; color: var(--navy);
+  letter-spacing: 0.03em; margin-bottom: 4px;
+  text-shadow: 2px 2px 0 rgba(26,58,107,0.15);
+}
+.orari-card-address { font-family: var(--font-cond); font-size: 0.82rem; font-weight: 700; color: var(--brown-light); margin-bottom: 20px; }
+.orari-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px dashed rgba(26,58,107,0.12);
+}
+.orari-row:last-of-type { border-bottom: none; }
+.orari-day  { font-family: var(--font-oswald); font-weight: 700; font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); }
+.orari-time { font-family: var(--font-display); font-size: 1.15rem; color: var(--red); }
+.orari-closed { font-family: var(--font-oswald); font-weight: 700; font-size: 0.88rem; color: rgba(200,34,42,0.45); }
+.orari-note { font-size: 0.74rem; color: var(--brown-light); font-style: italic; margin-top: 14px; opacity: 0.65; line-height: 1.5; }
+
+/* ---- LAVORA CON NOI ---- */
+#lavora {
+  padding: 72px 24px; background: var(--navy-dark); position: relative; overflow: hidden;
+}
+#lavora::before {
+  content: 'JOIN';
+  position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-display); font-size: 18rem;
+  color: rgba(245,197,24,0.04); pointer-events: none; line-height: 1;
+}
+#lavora::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,197,24,0.04) 1px, transparent 1px);
+  background-size: 28px 28px; pointer-events: none;
+}
+
+.lavora-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.lavora-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+.lavora-text .sec-title { color: var(--white); text-shadow: 3px 3px 0 var(--navy-dark); margin-bottom: 20px; }
+.lavora-text .sec-title .yellow { color: var(--yellow); }
+.lavora-text p {
+  font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.6);
+  font-weight: 400; margin-bottom: 14px;
+}
+.lavora-text p strong { color: var(--cream); font-weight: 600; }
+
+.lavora-perks { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+.lavora-perk {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: rgba(255,255,255,0.05); border: 2px solid rgba(245,197,24,0.15);
+  padding: 14px 16px;
+}
+.lavora-perk-icon { font-size: 1.3rem; flex-shrink: 0; }
+.lavora-perk-title {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.88rem;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); margin-bottom: 2px;
+}
+.lavora-perk-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 400; line-height: 1.5; }
+
+/* Candidati box */
+.candidati-box {
+  background: var(--cream); border: 4px solid var(--yellow);
+  box-shadow: 7px 7px 0 var(--yellow-dark); padding: 32px;
+}
+.candidati-box-header {
+  background: var(--yellow); margin: -32px -32px 24px;
+  padding: 14px 24px; display: flex; align-items: center; gap: 12px;
+}
+.candidati-box-header h3 {
+  font-family: var(--font-display); font-size: 1.8rem;
+  color: var(--navy-dark); letter-spacing: 0.03em;
+  text-shadow: 2px 2px 0 rgba(26,58,107,0.2);
+}
+.candidati-box-header span { font-size: 2rem; }
+
+.candidati-sub {
+  font-family: var(--font-cond); font-size: 0.9rem; font-weight: 400;
+  color: var(--brown-light); line-height: 1.65; margin-bottom: 22px;
+}
+.candidati-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.candidati-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; text-decoration: none;
+  border: 3px solid; border-radius: 2px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  position: relative;
+}
+.candidati-link:hover { transform: translate(-2px,-2px); }
+.candidati-link.wa {
+  background: #25d366; border-color: #1da851; color: var(--white);
+  box-shadow: 4px 4px 0 #1da851;
+}
+.candidati-link.wa:hover { box-shadow: 6px 6px 0 #1da851; }
+.candidati-link.ig {
+  background: #e1306c; border-color: #b01e52; color: var(--white);
+  box-shadow: 4px 4px 0 #b01e52;
+}
+.candidati-link.ig:hover { box-shadow: 6px 6px 0 #b01e52; }
+
+.candidati-link-icon { font-size: 1.6rem; flex-shrink: 0; }
+.candidati-link-platform {
+  font-family: var(--font-oswald); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.75; display: block;
+}
+.candidati-link-action {
+  font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.02em;
+  display: block; text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+.candidati-arrow { position: absolute; right: 18px; font-size: 1.2rem; opacity: 0.6; }
+.candidati-note {
+  font-size: 0.76rem; color: var(--brown-light); font-style: italic; line-height: 1.55; opacity: 0.7;
+}
+
+/* ---- SOCIAL STRIP ---- */
+#social-strip {
+  padding: 60px 24px; background: var(--yellow);
+  border-top: 4px solid var(--yellow-dark); border-bottom: 4px solid var(--yellow-dark);
+  text-align: center;
+}
+.social-handle {
+  font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--navy-dark); text-shadow: 3px 3px 0 rgba(26,58,107,0.2);
+  letter-spacing: 0.04em; margin: 14px 0 8px;
+}
+.social-desc {
+  font-family: var(--font-oswald); font-size: 0.9rem; font-weight: 600;
+  color: var(--navy); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 32px;
+}
+.social-cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.social-card {
+  flex: 1; min-width: 160px; max-width: 190px;
+  background: var(--white); border: 3px solid var(--navy);
+  box-shadow: 4px 4px 0 var(--navy-dark); padding: 20px 16px; text-align: center;
+  text-decoration: none; transition: transform 0.1s, box-shadow 0.1s;
+}
+.social-card:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--navy-dark); }
+.social-card-icon { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+.social-card-name {
+  font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.03em;
+  display: block; margin-bottom: 4px;
+}
+.social-card.instagram .social-card-name { color: #e1306c; }
+.social-card.facebook  .social-card-name { color: #4267b2; }
+.social-card.whatsapp  .social-card-name { color: #25d366; }
+.social-card-handle { font-size: 0.76rem; color: var(--brown-light); font-weight: 400; }
+
+@media(max-width:900px){
+  .sedi-grid   { grid-template-columns: 1fr; }
+  .orari-grid  { grid-template-columns: 1fr; }
+  .lavora-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+</head>
+<body data-page="contatti">
+<div id="ticker-anchor"></div>
+
+<div class="page-hero">
+  <div class="page-hero-stripes"></div>
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Academy Evergreen Burger</p>
+    <h1 class="page-hero-title">Contatti<br>&amp; <span class="yellow">Info</span></h1>
+    <p class="page-hero-sub">★ Trovaci · Chiamaci · Scrivici · Ordinaci ★</p>
+  </div>
+</div>
+
+<!-- TICKER injected here -->
+
+<!-- ================================================================
+     SEDI CONTATTI
+     ================================================================ -->
+<section id="sedi-contatti">
+  <div class="container">
+    <div class="sec-header reveal">
+      <p class="sec-label">Dove siamo</p>
+      <h2 class="sec-title">Le nostre <span class="red">Sedi</span></h2>
+      <p>Due location per soddisfare la tua fame — scegli quella più vicina a te</p>
+    </div>
+
+    <div class="sedi-grid">
+
+      <!-- BOVOLENTA -->
+      <div class="sede-card reveal">
+        <div class="sede-card-header">
+          <div class="sede-card-num">01</div>
+          <div class="sede-card-title-wrap">
+            <div class="sede-card-name">Bovolenta</div>
+            <div class="sede-card-sub">Sede principale · Bovolenta (PD)</div>
+          </div>
+        </div>
+        <div class="sede-card-body">
+          <!-- =====================================================
+               INDIRIZZO: Aggiorna se necessario
+               ===================================================== -->
+          <p class="sede-card-address">
+            📍 Piazza Accademia 24, 35024 Bovolenta (PD)<br>
+            ⛔ Chiuso il Lunedì e Martedì
+          </p>
+          <div class="contact-links">
+            <!-- =====================================================
+                 TELEFONO BOVOLENTA: Aggiorna il numero se necessario
+                 ===================================================== -->
+            <a href="tel:+393515846881" class="contact-link phone-link">
+              <span class="contact-link-icon">📞</span>
+              <div><span class="contact-link-label">Telefono / Prenotazioni</span><span class="contact-link-value">351 584 6881</span></div>
+            </a>
+            <!-- =====================================================
+                 WHATSAPP BOVOLENTA: Sostituisci 39XXXXXXXXXX con numero reale
+                 ===================================================== -->
+            <a href="https://wa.me/39XXXXXXXXXX" target="_blank" class="contact-link wa-link">
+              <span class="contact-link-icon">💬</span>
+              <div><span class="contact-link-label">WhatsApp</span><span class="contact-link-value green">Scrivici su WhatsApp</span></div>
+            </a>
+            <!-- =====================================================
+                 LINK ORDINE BOVOLENTA: Verifica il link
+                 ===================================================== -->
+            <a href="https://www.cooperto.link/e19e38" target="_blank" class="contact-link order-link">
+              <span class="contact-link-icon">🛒</span>
+              <div><span class="contact-link-label">Ordina Online</span><span class="contact-link-value red">Ordina – Bovolenta ↗</span></div>
+            </a>
+            <a href="https://maps.google.com/?q=Piazza+Accademia+24,+Bovolenta" target="_blank" class="contact-link maps-link">
+              <span class="contact-link-icon">🗺️</span>
+              <div><span class="contact-link-label">Indicazioni stradali</span><span class="contact-link-value blue">Apri su Google Maps ↗</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALLI DI CHIOGGIA -->
+      <div class="sede-card reveal">
+        <div class="sede-card-header">
+          <div class="sede-card-num">02</div>
+          <div class="sede-card-title-wrap">
+            <div class="sede-card-name">Valli di Chioggia</div>
+            <div class="sede-card-sub">Seconda sede · Valli di Chioggia (VE)</div>
+          </div>
+        </div>
+        <div class="sede-card-body">
+          <!-- =====================================================
+               INDIRIZZO VALLI: Sostituisci con l'indirizzo reale
+               ===================================================== -->
+          <p class="sede-card-address">
+            📍 Via [DA INSERIRE], Valli di Chioggia (VE)<br>
+            ⛔ Chiuso il [DA INSERIRE]
+          </p>
+          <div class="contact-links">
+            <!-- =====================================================
+                 TELEFONO VALLI: Sostituisci con il numero reale
+                 ===================================================== -->
+            <a href="tel:+390410000000" class="contact-link phone-link">
+              <span class="contact-link-icon">📞</span>
+              <div><span class="contact-link-label">Telefono / Prenotazioni</span><span class="contact-link-value">+39 041 000 0000</span></div>
+            </a>
+            <!-- =====================================================
+                 WHATSAPP VALLI: Sostituisci 39XXXXXXXXXX
+                 ===================================================== -->
+            <a href="https://wa.me/39XXXXXXXXXX" target="_blank" class="contact-link wa-link">
+              <span class="contact-link-icon">💬</span>
+              <div><span class="contact-link-label">WhatsApp</span><span class="contact-link-value green">Scrivici su WhatsApp</span></div>
+            </a>
+            <!-- =====================================================
+                 LINK ORDINE VALLI: Sostituisci href
+                 ===================================================== -->
+            <a href="#" target="_blank" class="contact-link order-link">
+              <span class="contact-link-icon">🛒</span>
+              <div><span class="contact-link-label">Ordina Online</span><span class="contact-link-value red">Ordina – Valli ↗</span></div>
+            </a>
+            <!-- =====================================================
+                 MAPS VALLI: Sostituisci con l'indirizzo reale nell'URL
+                 ===================================================== -->
+            <a href="https://maps.google.com/?q=Valli+di+Chioggia" target="_blank" class="contact-link maps-link">
+              <span class="contact-link-icon">🗺️</span>
+              <div><span class="contact-link-label">Indicazioni stradali</span><span class="contact-link-value blue">Apri su Google Maps ↗</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     ORARI
+     ================================================================ -->
+<section id="orari">
+  <div class="container">
+    <div class="sec-header reveal">
+      <p class="sec-label">Quando veniamo</p>
+      <h2 class="sec-title">Orari di <span class="red">Apertura</span></h2>
+    </div>
+    <div class="orari-grid">
+      <!-- BOVOLENTA -->
+      <div class="orari-card reveal">
+        <h3 class="orari-card-title">Bovolenta</h3>
+        <p class="orari-card-address">📍 Piazza Accademia 24, 35024 Bovolenta</p>
+        <!-- =====================================================
+             ORARI BOVOLENTA: Sostituisci gli orari reali
+             Per i giorni chiusi usa la classe .orari-closed
+             ===================================================== -->
+        <div class="orari-row"><span class="orari-day">Lunedì</span><span class="orari-closed">Chiuso</span></div>
+        <div class="orari-row"><span class="orari-day">Martedì</span><span class="orari-closed">Chiuso</span></div>
+        <div class="orari-row"><span class="orari-day">Mercoledì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Giovedì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Venerdì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Sabato</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Domenica</span><span class="orari-time">00:00 – 00:00</span></div>
+        <p class="orari-note">★ Gli orari possono variare nei giorni festivi. Controlla sempre il nostro Instagram per aggiornamenti!</p>
+      </div>
+      <!-- VALLI -->
+      <div class="orari-card reveal">
+        <h3 class="orari-card-title">Valli di Chioggia</h3>
+        <p class="orari-card-address">📍 Via [DA INSERIRE], Valli di Chioggia</p>
+        <!-- =====================================================
+             ORARI VALLI: Sostituisci con gli orari reali
+             ===================================================== -->
+        <div class="orari-row"><span class="orari-day">Lunedì</span><span class="orari-closed">Chiuso</span></div>
+        <div class="orari-row"><span class="orari-day">Martedì</span><span class="orari-closed">Chiuso</span></div>
+        <div class="orari-row"><span class="orari-day">Mercoledì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Giovedì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Venerdì</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Sabato</span><span class="orari-time">00:00 – 00:00</span></div>
+        <div class="orari-row"><span class="orari-day">Domenica</span><span class="orari-time">00:00 – 00:00</span></div>
+        <p class="orari-note">★ Gli orari possono variare nei giorni festivi. Controlla sempre il nostro Instagram!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     LAVORA CON NOI
+     ================================================================ -->
+<section id="lavora">
+  <div class="lavora-inner">
+    <div class="lavora-grid">
+
+      <div class="lavora-text reveal">
+        <p class="sec-label" style="margin-bottom:16px;">
+          <span style="color:var(--yellow)">★</span> Lavora con noi <span style="color:var(--yellow)">★</span>
+        </p>
+        <h2 class="sec-title" style="margin-bottom:20px;">
+          Vuoi entrare<br>nel nostro <span class="yellow">Team?</span>
+        </h2>
+        <p>L'Academy Evergreen Burger è più di un posto dove si mangia bene. È un team di persone <strong>appassionate, veloci e orgogliose</strong> di quello che servono ogni giorno.</p>
+        <p>Cerchiamo persone con la stessa energia che mettiamo nei nostri panini: <strong>tanta</strong>. Se ami la ristorazione e vuoi far parte di qualcosa di speciale, vogliamo sentirti.</p>
+        <div class="lavora-perks">
+          <div class="lavora-perk">
+            <div class="lavora-perk-icon">🔥</div>
+            <div><div class="lavora-perk-title">Ambiente dinamico</div><div class="lavora-perk-desc">Team giovane, motivato e in crescita — ogni giorno è diverso.</div></div>
+          </div>
+          <div class="lavora-perk">
+            <div class="lavora-perk-icon">🍔</div>
+            <div><div class="lavora-perk-title">Lavori con il meglio</div><div class="lavora-perk-desc">Ingredienti top, ricette studiate, standard alti. Siamo orgogliosi.</div></div>
+          </div>
+          <div class="lavora-perk">
+            <div class="lavora-perk-icon">📈</div>
+            <div><div class="lavora-perk-title">Crescita reale</div><div class="lavora-perk-desc">Due sedi e un progetto in espansione. Opportunità vere per chi si impegna.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="candidati-box">
+          <div class="candidati-box-header">
+            <span>🎬</span>
+            <h3>Entra a far parte della nostra storia!</h3>
+          </div>
+          <p class="candidati-sub">
+            Manda il tuo CV con una breve presentazione — chi sei, cosa sai fare, perché vuoi stare nell'Academy.
+            Puoi scriverci su <strong>WhatsApp</strong> o mandare un DM su <strong>Instagram</strong>. Rispondiamo a tutti!
+          </p>
+          <div class="candidati-links">
+            <!-- =====================================================
+                 WHATSAPP LAVORO: Sostituisci 39XXXXXXXXXX
+                 ===================================================== -->
+            <a href="https://wa.me/39XXXXXXXXXX?text=Ciao!%20Sono%20interessato%20a%20lavorare%20con%20voi%20all%27Academy%20Evergreen%20Burger.%20Vi%20mando%20il%20mio%20CV." target="_blank" class="candidati-link wa">
+              <span class="candidati-link-icon">💬</span>
+              <div>
+                <span class="candidati-link-platform">WhatsApp</span>
+                <span class="candidati-link-action">Invia il CV su WhatsApp</span>
+              </div>
+              <span class="candidati-arrow">→</span>
+            </a>
+            <a href="https://www.instagram.com/academy_evergreenburger/" target="_blank" class="candidati-link ig">
+              <span class="candidati-link-icon">📸</span>
+              <div>
+                <span class="candidati-link-platform">Instagram DM</span>
+                <span class="candidati-link-action">Scrivici su Instagram</span>
+              </div>
+              <span class="candidati-arrow">→</span>
+            </a>
+          </div>
+          <p class="candidati-note">
+            ★ Allega il CV (anche PDF) e presentati con qualche riga. Valutiamo ogni candidatura con attenzione, sia per Bovolenta che per Valli di Chioggia.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SOCIAL
+     ================================================================ -->
+<section id="social-strip">
+  <div class="container">
+    <p class="sec-label" style="justify-content:center;margin-bottom:10px;">Seguici sui Social</p>
+    <div class="social-handle">@academy_evergreenburger</div>
+    <p class="social-desc">★ Storie · Sfide · Panini epici · Ogni giorno ★</p>
+    <div class="social-cards">
+      <a href="https://www.instagram.com/academy_evergreenburger/" target="_blank" class="social-card instagram">
+        <span class="social-card-icon">📸</span>
+        <span class="social-card-name">Instagram</span>
+        <span class="social-card-handle">@academy_evergreenburger</span>
+      </a>
+      <a href="https://www.facebook.com/Academy-evergreen-burger" target="_blank" class="social-card facebook">
+        <span class="social-card-icon">📘</span>
+        <span class="social-card-name">Facebook</span>
+        <span class="social-card-handle">Academy evergreen burger</span>
+      </a>
+      <!-- =====================================================
+           WHATSAPP: Sostituisci 39XXXXXXXXXX
+           ===================================================== -->
+      <a href="https://wa.me/39XXXXXXXXXX" target="_blank" class="social-card whatsapp">
+        <span class="social-card-icon">💬</span>
+        <span class="social-card-name">WhatsApp</span>
+        <span class="social-card-handle">Scrivici ora</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="shared-nav.js"></script>
+</body>
+</html>
