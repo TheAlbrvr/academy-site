@@ -57,7 +57,7 @@
     <div>
       <h4 class="footer-col-title">Navigazione</h4>
       <ul class="footer-list">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="google88ce36416b866076.html">Home</a></li>
         <li><a href="menu.html">Menù &amp; Sedi</a></li>
         <li><a href="sfide.html">Le Sfide</a></li>
         <li><a href="contatti.html">Contatti</a></li>
