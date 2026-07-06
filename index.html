@@ -58,7 +58,7 @@
       <h2 class="sec-title">
         La Nostra<br><span class="red">Filosofia</span>
       </h2>
-      <p>Nessun compromesso. Nessuna mezza misura. L'Academy Evergreen Burger è nata da una passione senza confini per il cibo di <strong>qualità vera</strong> e per le porzioni che lasciano il segno.</p>
+      <p>Nessun compromesso. Nessun mezza misura. L'Academy Evergreen Burger è nata da una passione senza confini per il cibo di <strong>qualità vera</strong> e per le porzioni che lasciano il segno.</p>
       <p>Selezioniamo ogni ingrediente con cura maniacale: carne fresca, pane artigianale prodotto da noi, salse studiate nei minimi dettagli. Il risultato? Più di <strong>40 ricette</strong> che fanno tornare i clienti, ogni volta.</p>
       <p>Dal classico Burger XXL alla sfida leggendaria del Wurstel-One 1kg, passando per la Chicago's Pizza e i Burritos — qui si mangia davvero bene, e in grande.</p>
 
@@ -101,6 +101,7 @@
   </div>
 </section>
 
+<!-- SEZIONE BURGER DEL MESE -->
 <section id="burger-mese">
   <div class="container">
     <div class="sec-header reveal">
@@ -117,12 +118,14 @@
           <span class="bm-month">★ Burger del Mese ★</span>
         </div>
         <div class="bm-img">
-          <div class="img-ph"><span class="icon">🍔</span><p>Foto Burger Mese Bovolenta</p></div>
+          <!-- Prende l'immagine dalla cartella img/ -->
+          <img src="img/burger-mese.jpg" alt="Burger del Mese" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="bm-body">
-          <span class="bm-tag">⭐ Bovolenta & Valli</span>
-          <h3 class="bm-name">TITAN CRUNCH</h3>
-          <p class="bm-desc">Hamburger di polo panato da 200g, peperoni caramellati, burratina affumicata, bacon croccante, salsa jack daniels, anelli di cipolla fritti</p>
+          <span class="bm-tag">⭐ Bovolenta &amp; Valli</span>
+          <!-- ID pronti per il JavaScript -->
+          <h3 class="bm-name" id="burger-mese-titolo">Caricamento...</h3>
+          <p class="bm-desc" id="burger-mese-desc">...</p>
           <div class="bm-footer">
           </div>
         </div>
@@ -131,6 +134,7 @@
   </div>
 </section>
 
+<!-- SEZIONE PIZZA DEL MESE -->
 <section id="pizza-mese">
   <div class="container">
     <div class="sec-header reveal">
@@ -147,12 +151,14 @@
           <span class="bm-month">★ Pizza del Mese ★</span>
         </div>
         <div class="bm-img">
-          <div class="img-ph"><span class="icon">🍕</span><p>Foto Pizza Mese Bovolenta</p></div>
+          <!-- Prende l'immagine dalla cartella img/ -->
+          <img src="img/pizza-mese.jpg" alt="Pizza del Mese" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="bm-body">
           <span class="bm-tag">⭐ Bovolenta</span>
-          <h3 class="bm-name">MORDU</h3>
-          <p class="bm-desc">Bordi ripieni di crema ai formaggi, pomodoro saporito, white and orange cheddar, peperoni caramellati, spianata calabra, cipolla crispy croccante</p>
+          <!-- ID pronti per il JavaScript -->
+          <h3 class="bm-name" id="pizza-mese-titolo">Caricamento...</h3>
+          <p class="bm-desc" id="pizza-mese-desc">...</p>
           <div class="bm-footer">
            </div>
         </div>
@@ -172,5 +178,35 @@
 </div>
 
 <script src="shared-nav.js"></script>
+
+<!-- SCRIPT PER IL CARICAMENTO DEI TESTI DALLE CARTELLE -->
+<script>
+async function caricaSpecialitaHome() {
+  try {
+    // Carica testo Burger (Cerca nella cartella testi/)
+    const risBurger = await fetch('testi/burger-mese.txt');
+    if (risBurger.ok) {
+      const tomo = await risBurger.text();
+      const linee = tomo.split('\n');
+      if (linee[0]) document.getElementById('burger-mese-titolo').innerText = linee[0].trim();
+      if (linee[1]) document.getElementById('burger-mese-desc').innerText = linee[1].trim();
+    }
+
+    // Carica testo Pizza (Cerca nella cartella testi/)
+    const risPizza = await fetch('testi/pizza-mese.txt');
+    if (risPizza.ok) {
+      const tomo = await risPizza.text();
+      const linee = tomo.split('\n');
+      if (linee[0]) document.getElementById('pizza-mese-titolo').innerText = linee[0].trim();
+      if (linee[1]) document.getElementById('pizza-mese-desc').innerText = linee[1].trim();
+    }
+  } catch (err) {
+    console.error("Errore durante il recupero delle novità del mese:", err);
+  }
+}
+
+// Avvia l'operazione appena il DOM è pronto
+document.addEventListener('DOMContentLoaded', caricaSpecialitaHome);
+</script>
 </body>
 </html>

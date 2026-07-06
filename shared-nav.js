@@ -46,14 +46,20 @@
   </div>
 </div>`;
 
-  const footer = `
+const footer = `
 <footer>
   <div class="footer-grid">
     <div>
       <div class="footer-logo">ACADEMY</div>
       <div class="footer-logo-sub">Evergreen Burger · Bakery &amp; American Pizza</div>
-      <p class="footer-tagline">L'Accademia del Burger XXL. Qualità vera, ingredienti selezionati, porzioni che non lasciano mai fame. Due sedi, una sola filosofia.</p>
+      <p class="footer-tagline">L'Accademia del Burger XXL. Qualità vera, ingredienti selezionati, porzioni che non lasciano mai fame.</p>
+      <div class="footer-company-info">
+        <strong>Academy Evergreen Burger S.r.l.</strong><br>
+        Via Roma, 12 - 35024 Bovolenta (PD)<br>
+        REA: PD - 123456
+      </div>
     </div>
+    
     <div>
       <h4 class="footer-col-title">Navigazione</h4>
       <ul class="footer-list">
@@ -61,20 +67,31 @@
         <li><a href="menu.html">Menù &amp; Sedi</a></li>
         <li><a href="sfide.html">Le Sfide</a></li>
         <li><a href="contatti.html">Contatti</a></li>
+        <li class="footer-list-spacer"></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
       </ul>
     </div>
+  
+
     <div>
-      <h4 class="footer-col-title">Le Sedi</h4>
-      <ul class="footer-list">
-        <li>📍 <strong style="color:rgba(255,255,255,0.7)">Bovolenta</strong><br>Piazza Accademia 24, 35024</li>
-        <li>📍 <strong style="color:rgba(255,255,255,0.7)">Valli di Chioggia</strong><br>SS Romea 578, 30015</li>
-        <li><a href="https://www.cooperto.link/e19e38" target="_blank">🛒 Prenota - Bovolenta / Valli </a></li>
-      </ul>
+      <h4 class="footer-col-title">Seguici</h4>
+      <p class="footer-tagline" style="font-size: 0.85rem;">Condividi le tue sfide XXL sui nostri social!</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0 -5 5v3h-3v4h3v8h4v-8h3l1-4h-4v-3a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+      <a href="https://www.cooperto.link/e19e38" target="_blank" class="btn-yellow" style="margin-top: 20px; padding: 6px 12px; font-size: 0.75rem;">🛒 Prenota Ora</a>
     </div>
   </div>
+  
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 ACADEMY Evergreen Burger. Tutti i diritti riservati.</p>
-    <p class="footer-copy">P.IVA [DA INSERIRE]</p>
+    <p class="footer-copy">© 2026 ACADEMY Evergreen Burger. Tutti i diritti riservati.</p>
+    <p class="footer-piva">P.IVA: INSERIRE_PARTITA_IVA</p>
   </div>
 </footer>`;
 

@@ -380,6 +380,44 @@ footer::before { content: '★★★★★'; position: absolute; bottom: -30px; 
 .footer-hours-item span:last-child  { color: var(--cream-dark); }
 .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.25); font-weight: 400; }
+/* ============================================================
+   AGGIUNTE LEGALI E ORARI FOOTER
+   ============================================================ */
+.footer-company-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255,255,255,0.1);
+}
+.footer-company-info strong {
+  color: rgba(255,255,255,0.65);
+}
+.footer-list-spacer {
+  height: 8px;
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+  margin-bottom: 8px;
+}
+.footer-small-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+}
+.footer-hours {
+  font-family: var(--font-oswald);
+  font-size: 0.9rem;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-top: 4px;
+}
+.footer-piva {
+  font-family: var(--font-oswald);
+  font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
 
 /* ============================================================
    ANIMATIONS
