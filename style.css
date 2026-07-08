@@ -1,212 +1,474 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACADEMY Evergreen Burger — Home</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body data-page="home">
-<div id="ticker-anchor"></div>
+/*  ============================================================
+   ACADEMY EVERGREEN BURGER — American Vintage Diner Theme
+   ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap');
 
-<section id="hero">
-  
-  <div class="hero-stripes"></div>
-  <div class="hero-bg-text">ACADEMY</div>
+:root {
+  --navy:       #1a3a6b;
+  --navy-dark:  #122a52;
+  --navy-light: #2a4e8f;
+  --red:        #c8222a;
+  --red-dark:   #a01820;
+  --red-light:  #e03038;
+  --yellow:     #f5c518;
+  --yellow-dark:#d4a800;
+  --yellow-pale:#fff8dc;
+  --cream:      #fdf6e3;
+  --cream-dark: #f0e4c0;
+  --cream-mid:  #e8d9a0;
+  --white:      #ffffff;
+  --brown:      #5c3d1e;
+  --brown-light:#8b6234;
 
-  <div class="hero-content">
-
-    
-    <div class="hero-stars">★ ★ ★ ★ ★</div>
-    
-    <h1 class="hero-title">
-      <img src="academy-img.png" alt="ACADEMY Evergreen Burger" width="100%" height="auto" align="center" style="filter: brightness(0) invert(1);">
-
-    </h1>
-
-    <div class="hero-sub-tag">Bovolenta · Valli di Chioggia</div>
-
-    <div class="hero-xxl-stamp">
-      ‼ XXL ‼
-      <span>Tutto XXL · Qualità Vera</span>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="https://www.cooperto.link/e19e38" target="_blank" class="btn-yellow">🛒 Ordina Subito</a>
-      <a href="sfide.html" class="btn-red">🏆 Le Sfide</a>
-      <a href="menu.html"  class="btn-navy">📋 Vedi il Menù</a>
-    </div><br>
-  </div>
-  
-  <div class="hero-scroll">
-    <span>Scorri</span>
-    <div class="scroll-arrow"></div>
-  </div>
-</section>
-
-<section id="filosofia">
-  <div class="fil-grid">
-    <div class="fil-text reveal">
-      <div class="fil-label-wrap">
-        <span class="fil-icon">🎬</span>
-        <p class="sec-label">Chi siamo</p>
-      </div>
-      <h2 class="sec-title">
-        La Nostra<br><span class="red">Filosofia</span>
-      </h2>
-      <p>Nessun compromesso. Nessun mezza misura. L'Academy Evergreen Burger è nata da una passione senza confini per il cibo di <strong>qualità vera</strong> e per le porzioni che lasciano il segno.</p>
-      <p>Selezioniamo ogni ingrediente con cura maniacale: carne fresca, pane artigianale prodotto da noi, salse studiate nei minimi dettagli. Il risultato? Più di <strong>40 ricette</strong> che fanno tornare i clienti, ogni volta.</p>
-      <p>Dal classico Burger XXL alla sfida leggendaria del Wurstel-One 1kg, passando per la Chicago's Pizza e i Burritos — qui si mangia davvero bene, e in grande.</p>
-
-      <div class="fil-stats">
-        <div class="fil-stat">
-          <span class="fil-stat-num">40+</span>
-          <span class="fil-stat-label">Ricette nel Menù</span>
-        </div>
-        <div class="fil-stat">
-          <span class="fil-stat-num">2</span>
-          <span class="fil-stat-label">Sedi Attive</span>
-        </div>
-        <div class="fil-stat">
-          <span class="fil-stat-num">XXL</span>
-          <span class="fil-stat-label">Sempre e solo</span>
-        </div>
-        <div class="fil-stat">
-          <span class="fil-stat-num">★★★★★</span>
-          <span class="fil-stat-label">Qualità garantita</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="fil-visual reveal">
-      <div class="fil-frame">
-        <span class="fil-corner tl">🎬</span>
-        <span class="fil-corner tr">🎬</span>
-        <span class="fil-corner bl">⭐</span>
-        <span class="fil-corner br">⭐</span>
-        <div class="img-ph">
-          <span class="icon">📸</span>
-          <p>Foto del locale<br>(img/locale.jpg)</p>
-        </div>
-      </div>
-      <div class="fil-badge">
-        <span class="b1">XXL</span>
-        <span class="b2">Qualità vera</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEZIONE BURGER DEL MESE -->
-<section id="burger-mese">
-  <div class="container">
-    <div class="sec-header reveal">
-      <p class="sec-label">Speciale mensile</p>
-       <h2 class="sec-title">
-        <span class="red">Burger </span><br>del mese!!!
-      </h2>
-      <p>La creazione del mese per ogni sede — cambia ogni mese, scopri la star di questo periodo</p>
-    </div>
-
-    <div class="bm-grid">
-      <div class="bm-card reveal">
-        <div class="bm-header">
-          <span class="bm-month">★ Burger del Mese ★</span>
-        </div>
-        <div class="bm-img">
-          <!-- Prende l'immagine dalla cartella img/ -->
-          <img src="img/burger-mese.jpg" alt="Burger del Mese" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div class="bm-body">
-          <span class="bm-tag">⭐ Bovolenta &amp; Valli</span>
-          <!-- ID pronti per il JavaScript -->
-          <h3 class="bm-name" id="burger-mese-titolo">Caricamento...</h3>
-          <p class="bm-desc" id="burger-mese-desc">...</p>
-          <div class="bm-footer">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEZIONE PIZZA DEL MESE -->
-<section id="pizza-mese">
-  <div class="container">
-    <div class="sec-header reveal">
-      <p class="sec-label">Speciale mensile</p>
-      <h2 class="sec-title">
-      <span class="yellow">Pizza</span><br>del mese!!!
-      </h2>
-      <p>La creazione del mese in versione 🍕 — cambia ogni mese, scopri la star di questo periodo</p>
-    </div>
-
-    <div class="bm-grid">
-      <div class="bm-card reveal">
-        <div class="bm-header">
-          <span class="bm-month">★ Pizza del Mese ★</span>
-        </div>
-        <div class="bm-img">
-          <!-- Prende l'immagine dalla cartella img/ -->
-          <img src="img/pizza-mese.jpg" alt="Pizza del Mese" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div class="bm-body">
-          <span class="bm-tag">⭐ Bovolenta</span>
-          <!-- ID pronti per il JavaScript -->
-          <h3 class="bm-name" id="pizza-mese-titolo">Caricamento...</h3>
-          <p class="bm-desc" id="pizza-mese-desc">...</p>
-          <div class="bm-footer">
-           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cta-band">
-  <h2 class="reveal">Pronto a <span class="y">sfidare</span> i tuoi limiti?</h2>
-  <p class="reveal">Sfide epiche, menù da urlo e due sedi dove regna l'eccesso di qualità.</p>
-  <div class="cta-btns reveal">
-    <a href="sfide.html" class="btn-yellow">🏆 Vedi le Sfide</a>
-   <p class="reveal"><br>Sei già pronto a prenotare, fai una chiamata e preparati a mangiare.</p>
-    <a href="contatti.html" class="btn-navy" style="border-color:rgba(255,255,255,0.3)">📞 Contattaci</a>
-  </div>
-</div>
-
-<script src="shared-nav.js"></script>
-
-<!-- SCRIPT PER IL CARICAMENTO DEI TESTI DALLE CARTELLE -->
-<script>
-async function caricaSpecialitaHome() {
-  try {
-    // Carica testo Burger (Cerca nella cartella testi/)
-    const risBurger = await fetch('testi/burger-mese.txt');
-    if (risBurger.ok) {
-      const tomo = await risBurger.text();
-      const linee = tomo.split('\n');
-      if (linee[0]) document.getElementById('burger-mese-titolo').innerText = linee[0].trim();
-      if (linee[1]) document.getElementById('burger-mese-desc').innerText = linee[1].trim();
-    }
-
-    // Carica testo Pizza (Cerca nella cartella testi/)
-    const risPizza = await fetch('testi/pizza-mese.txt');
-    if (risPizza.ok) {
-      const tomo = await risPizza.text();
-      const linee = tomo.split('\n');
-      if (linee[0]) document.getElementById('pizza-mese-titolo').innerText = linee[0].trim();
-      if (linee[1]) document.getElementById('pizza-mese-desc').innerText = linee[1].trim();
-    }
-  } catch (err) {
-    console.error("Errore durante il recupero delle novità del mese:", err);
-  }
+  --font-display: 'Lilita One', cursive;
+  --font-slab:    'Alfa Slab One', serif;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-marker:  'Permanent Marker', cursive;
+  --font-oswald:  'Oswald', sans-serif;
 }
 
-// Avvia l'operazione appena il DOM è pronto
-document.addEventListener('DOMContentLoaded', caricaSpecialitaHome);
-</script>
-</body>
-</html>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--navy-dark);
+  font-family: var(--font-cond);
+  overflow-x: hidden;
+}
+
+/* ---- PAPER TEXTURE ---- */
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+/* ---- DOTTED BORDER UTILITY ---- */
+.dotted-border { border: 3px dashed rgba(26,58,107,0.25); }
+.dotted-border-red { border: 3px dashed rgba(200,34,42,0.3); }
+
+/* ---- STAR DECORATION ---- */
+.star-deco {
+  display: inline-block;
+  color: var(--yellow);
+  font-size: 1rem;
+  text-shadow: 0 0 6px rgba(245,197,24,0.4);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--navy-dark);
+  border-bottom: 4px solid var(--yellow);
+  height: 66px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 4px 0 var(--navy), 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; filter: brightness(0) invert(1); }
+.nav-logo-badge {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--yellow);
+  border: 3px solid var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0 2px var(--navy);
+}
+.nav-logo-text { line-height: 1; }
+.nav-logo-text .t1 {
+  font-family: var(--font-display); font-size: 1.3rem;
+  color: var(--yellow); letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0 var(--navy-dark);
+  display: block;
+}
+.nav-logo-text .t2 {
+  font-family: var(--font-cond); font-size: 0.62rem; font-weight: 700;
+  color: var(--cream-dark); letter-spacing: 0.25em; text-transform: uppercase;
+  display: block;
+}
+
+.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cream); text-decoration: none;
+  padding: 6px 14px; border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+  border: 2px solid transparent;
+}
+.nav-links a:hover, .nav-links a.active {
+  background: var(--yellow); color: var(--navy-dark);
+  border-color: var(--yellow-dark);
+}
+
+.nav-cta {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--white); background: var(--red);
+  padding: 8px 18px; text-decoration: none; border: 3px solid var(--red-dark);
+  border-radius: 3px; box-shadow: 3px 3px 0 var(--red-dark);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.nav-cta:hover { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--red-dark); }
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 26px; height: 3px; background: var(--yellow); border-radius: 2px; transition: 0.3s; }
+
+.nav-mobile-menu {
+  display: none; position: fixed; top: 66px; left: 0; right: 0;
+  background: var(--navy-dark); border-bottom: 4px solid var(--yellow);
+  padding: 16px 24px; z-index: 999; flex-direction: column; gap: 4px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 1.1rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream);
+  text-decoration: none; padding: 10px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.15); transition: color 0.2s;
+}
+.nav-mobile-menu a:hover, .nav-mobile-menu a.active { color: var(--yellow); }
+
+/* ============================================================
+   TICKER STRIP
+   ============================================================ */
+.ticker-strip {
+  background: var(--red);
+  border-bottom: 4px solid var(--red-dark);
+  padding: 10px 0; overflow: hidden;
+}
+.ticker-inner { display: flex; gap: 48px; animation: ticker 22s linear infinite; white-space: nowrap; }
+.ticker-item {
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.88rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--white);
+}
+.ticker-item .star { color: var(--yellow); font-size: 0.7rem; }
+
+/* ============================================================
+   SHARED COMPONENTS
+   ============================================================ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Section label */
+.sec-label {
+  font-family: var(--font-oswald); font-weight: 500; font-size: 0.78rem;
+  letter-spacing: 0.35em; text-transform: uppercase; color: var(--red);
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label::before, .sec-label::after { content: '★'; font-size: 0.55rem; color: var(--yellow); }
+
+/* Section title */
+.sec-title {
+  font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.9; text-transform: uppercase; color: var(--navy);
+  text-shadow: 3px 3px 0 rgba(26,58,107,0.2);
+}
+.sec-title .red    { color: var(--red); }
+.sec-title .yellow { color: var(--yellow-dark); }
+
+.sec-header { text-align: center; margin-bottom: 52px; }
+.sec-header .sec-label { justify-content: center; margin-bottom: 14px; }
+.sec-header p {
+  font-family: var(--font-cond); font-size: 1rem; font-weight: 400;
+  color: var(--brown-light); margin-top: 12px; letter-spacing: 0.05em;
+}
+
+/* Ribbon */
+.ribbon {
+  display: inline-block; font-family: var(--font-oswald); font-weight: 700; font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 16px; position: relative;
+}
+.ribbon-red    { background: var(--red); color: var(--white); }
+.ribbon-yellow { background: var(--yellow); color: var(--navy-dark); }
+.ribbon-navy   { background: var(--navy); color: var(--white); }
+.ribbon::before, .ribbon::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 8px;
+  background: inherit; clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%);
+}
+.ribbon::before { right: -6px; }
+.ribbon::after  { left: -6px; transform: scaleX(-1); }
+
+/* Stars row */
+.stars-row { display: flex; align-items: center; gap: 3px; font-size: 0.9rem; color: var(--yellow); }
+
+/* Buttons */
+.btn-red {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: var(--white);
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 12px 28px; text-decoration: none; border: 3px solid var(--red-dark);
+  border-radius: 3px; box-shadow: 4px 4px 0 var(--red-dark); transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-red:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--red-dark); }
+
+.btn-navy {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--white);
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 12px 28px; text-decoration: none; border: 3px solid var(--navy-dark);
+  border-radius: 3px; box-shadow: 4px 4px 0 var(--navy-dark); transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-navy:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--navy-dark); }
+
+.btn-yellow {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--navy-dark);
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 12px 28px; text-decoration: none; border: 3px solid var(--yellow-dark);
+  border-radius: 3px; box-shadow: 4px 4px 0 var(--yellow-dark); transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-yellow:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--yellow-dark); }
+
+/* ============================================================
+   HOME — vintage diner specific
+   ============================================================ */
+#hero {
+  min-height: 100vh; padding-top: 66px; background: var(--navy-dark);
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(245,197,24,0.08) 1px, transparent 1px);
+  background-size: 28px 28px; pointer-events: none;
+}
+.hero-stripes {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    -55deg, transparent, transparent 60px,
+    rgba(245,197,24,0.025) 60px, rgba(245,197,24,0.025) 62px
+  );
+}
+.hero-bg-text {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-family: var(--font-display); font-size: 22vw; color: rgba(245,197,24,0.04);
+  white-space: nowrap; pointer-events: none; line-height: 1; letter-spacing: 0.05em;
+}
+.hero-content { position: relative; z-index: 2; text-align: center; max-width: 960px; padding: 48px 24px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--yellow); color: var(--navy-dark);
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.76rem; letter-spacing: 0.25em;
+  text-transform: uppercase; padding: 6px 20px; border: 3px solid var(--yellow-dark);
+  border-radius: 2px; box-shadow: 3px 3px 0 var(--yellow-dark); margin-bottom: 20px; animation: fadeUp 0.6s ease both;
+}
+.hero-stars { display: flex; justify-content: center; gap: 6px; font-size: 1.2rem; color: var(--yellow); margin-bottom: 14px; animation: fadeUp 0.6s 0.05s ease both; }
+.hero-title {
+  font-family: var(--font-display); font-size: clamp(4rem, 13vw, 12rem); line-height: 0.85;
+  letter-spacing: 0.02em; text-transform: uppercase; color: var(--white);
+  text-shadow: 5px 5px 0 var(--navy), 8px 8px 0 rgba(0,0,0,0.3); animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-title .t-yellow { color: var(--yellow); display: block; }
+.hero-title .t-white  { color: var(--white);  display: block; }
+.hero-title .t-small  {
+  color: var(--cream-dark); display: block; font-size: 0.45em; letter-spacing: 0.18em;
+  font-family: var(--font-oswald); font-weight: 700; text-shadow: 2px 2px 0 var(--navy-dark);
+}
+.hero-sub-tag {
+  display: inline-block; font-family: var(--font-oswald); font-weight: 600; font-size: 1.1rem;
+  letter-spacing: 0.28em; text-transform: uppercase; color: var(--cream-mid);
+  border-top: 2px solid rgba(245,197,24,0.4); border-bottom: 2px solid rgba(245,197,24,0.4);
+  padding: 8px 24px; margin: 16px 0; animation: fadeUp 0.7s 0.18s ease both;
+}
+.hero-xxl-stamp {
+  display: inline-block; background: var(--red); color: var(--white); font-family: var(--font-display);
+  font-size: 3.5rem; line-height: 1; padding: 10px 24px; border: 4px solid var(--red-dark);
+  border-radius: 4px; box-shadow: 5px 5px 0 var(--red-dark); transform: rotate(-4deg);
+  margin: 10px 0 20px; animation: stamp 0.6s 0.3s ease both; text-shadow: 2px 2px 0 var(--red-dark);
+}
+.hero-xxl-stamp span { font-family: var(--font-oswald); font-size: 0.38em; font-weight: 700; letter-spacing: 0.2em; display: block; margin-top: -4px; text-transform: uppercase; }
+.hero-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 20px 0 30px; animation: fadeUp 0.8s 0.35s ease both; }
+.hero-pill {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--cream); background: rgba(255,255,255,0.08); border: 2px solid rgba(245,197,24,0.3); padding: 5px 14px; border-radius: 2px;
+}
+.hero-pill.hi { background: rgba(245,197,24,0.15); border-color: var(--yellow); color: var(--yellow); }
+.hero-ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; animation: fadeUp 0.9s 0.45s ease both; }
+.hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 2; text-align: center; animation: fadeUp 1s 0.9s ease both; }
+.hero-scroll span { font-family: var(--font-oswald); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,197,24,0.5); display: block; margin-bottom: 6px; }
+.scroll-arrow { width: 18px; height: 18px; margin: 0 auto; border-right: 3px solid var(--yellow); border-bottom: 3px solid var(--yellow); transform: rotate(45deg); animation: bounce 1.5s infinite; opacity: 0.6; }
+
+/* Phone bar styling */
+.phone-bar { background: var(--red); padding: 10px 24px; border-bottom: 4px solid var(--red-dark); }
+.phone-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.phone-bar-info { font-family: var(--font-oswald); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+.phone-bar-item { font-family: var(--font-oswald); font-weight: 600; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); display: flex; align-items: center; gap: 8px; }
+.phone-bar-item a { color: var(--yellow); text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+.phone-bar-item a:hover { text-decoration: underline; }
+.phone-bar-sep { color: rgba(255,255,255,0.3); }
+
+/* ---- FILOSOFIA ---- */
+#filosofia { padding: 80px 24px; background: var(--cream); position: relative; overflow: hidden; }
+#filosofia::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, var(--navy) 0%, transparent 70%); opacity: 0.04; pointer-events: none; }
+.fil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; max-width: 1200px; margin: 0 auto; }
+.fil-label-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.fil-icon { font-size: 1.5rem; }
+.fil-text h2 { margin-bottom: 20px; }
+.fil-text p { font-size: 1rem; line-height: 1.72; color: var(--brown-light); font-weight: 400; margin-bottom: 14px; }
+.fil-text p strong { color: var(--navy); font-weight: 700; }
+.fil-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.fil-stat { background: var(--navy); border: 3px solid var(--navy-dark); padding: 20px; text-align: center; position: relative; box-shadow: 4px 4px 0 var(--navy-dark); }
+.fil-stat-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--yellow); line-height: 1; display: block; text-shadow: 2px 2px 0 var(--navy-dark); }
+.fil-stat-label { font-family: var(--font-oswald); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-top: 4px; }
+.fil-visual { position: relative; }
+.fil-frame { aspect-ratio: 4/5; background: var(--cream-dark); border: 4px solid var(--navy); box-shadow: 8px 8px 0 var(--navy-dark); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.fil-corner { position: absolute; font-size: 1.5rem; line-height: 1; }
+.fil-corner.tl { top: 10px; left: 10px; }
+.fil-corner.tr { top: 10px; right: 10px; transform: scaleX(-1); }
+.fil-corner.bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+.fil-corner.br { bottom: 10px; right: 10px; transform: scale(-1,-1); }
+.fil-badge { position: absolute; bottom: -18px; right: -18px; width: 100px; height: 100px; border-radius: 50%; background: var(--yellow); border: 4px solid var(--yellow-dark); box-shadow: 4px 4px 0 var(--yellow-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-display); color: var(--navy-dark); line-height: 1; transform: rotate(8deg); }
+.fil-badge .b1 { font-size: 2rem; }
+.fil-badge .b2 { font-family: var(--font-oswald); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ---- PRODUCT SECTIONS (BURGER & PIZZA) ---- */
+#burger-mese, #pizza-mese { padding: 80px 24px; position: relative; }
+#burger-mese { background: var(--cream-dark); border-top: 4px dashed rgba(26,58,107,0.2); border-bottom: 4px dashed rgba(26,58,107,0.2); }
+#pizza-mese { background: var(--cream); }
+#burger-mese::before { content: '★'; position: absolute; right: 40px; top: 40px; font-size: 8rem; color: rgba(245,197,24,0.15); pointer-events: none; }
+#burger-mese::after { content: '★'; position: absolute; left: 40px; bottom: 40px; font-size: 6rem; color: rgba(245,197,24,0.12); pointer-events: none; }
+
+.bm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1000px; margin: 0 auto; }
+.bm-card { background: var(--white); border: 4px solid var(--navy); box-shadow: 6px 6px 0 var(--navy-dark); overflow: hidden; transition: transform 0.15s, box-shadow 0.15s; }
+.bm-card:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--navy-dark); }
+.bm-header { background: var(--navy); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+.bm-month { font-family: var(--font-oswald); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; color: var(--yellow); text-transform: uppercase; }
+.bm-img { aspect-ratio: 4/3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.bm-body { padding: 20px; }
+.bm-tag { display: inline-block; font-family: var(--font-oswald); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 3px 10px; margin-bottom: 8px; border: 2px solid var(--red-dark); }
+.bm-name { font-family: var(--font-display); font-size: 2.8rem; color: var(--navy); line-height: 0.9; margin-bottom: 10px; text-shadow: 2px 2px 0 rgba(26,58,107,0.15); }
+.bm-desc { font-size: 0.88rem; line-height: 1.6; color: var(--brown-light); font-weight: 400; margin-bottom: 16px; }
+.bm-footer { display: flex; align-items: center; justify-content: space-between; border-top: 2px dashed rgba(26,58,107,0.15); padding-top: 14px; }
+.bm-price { font-family: var(--font-display); font-size: 2rem; color: var(--red); }
+.bm-price span { font-family: var(--font-oswald); font-size: 0.7rem; color: var(--brown-light); font-weight: 400; }
+.bm-btn-order { font-size:.78rem; padding:8px 16px; }
+
+/* ---- CTA BAND ---- */
+.cta-band { background: var(--navy); border-top: 4px solid var(--yellow); border-bottom: 4px solid var(--yellow); padding: 64px 24px; text-align: center; position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(245,197,24,0.06) 1px, transparent 1px); background-size: 24px 24px; pointer-events: none; }
+.cta-band h2 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,4.5rem); color: var(--white); text-shadow: 4px 4px 0 var(--navy-dark); margin-bottom: 12px; position: relative; }
+.cta-band h2 .y { color: var(--yellow); }
+.cta-band p { font-family: var(--font-cond); font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; margin-bottom: 28px; position: relative; }
+.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+
+/* ============================================================
+   IMG PLACEHOLDER
+   ============================================================ */
+.img-ph { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 100%; color: rgba(26,58,107,0.25); text-align: center; }
+.img-ph .icon { font-size: 2.8rem; opacity: 0.4; }
+.img-ph p { font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.4; line-height: 1.4; padding: 0 16px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer { background: var(--navy-dark); border-top: 6px solid var(--yellow); padding: 52px 24px 22px; position: relative; overflow: hidden; }
+footer::before { content: '★★★★★'; position: absolute; bottom: -30px; right: -20px; font-size: 12rem; color: rgba(245,197,24,0.04); pointer-events: none; line-height: 1; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto 40px; }
+.footer-logo { font-family: var(--font-display); font-size: 2.2rem; color: var(--yellow); letter-spacing: 0.04em; text-shadow: 3px 3px 0 var(--navy-dark); }
+.footer-logo-sub { font-family: var(--font-cond); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+.footer-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.55); font-weight: 400; line-height: 1.65; max-width: 260px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+.social-link { width: 36px; height: 36px; border: 2px solid rgba(245,197,24,0.3); background: rgba(245,197,24,0.06); border-radius: 3px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1rem; color: var(--cream); transition: border-color 0.2s, background 0.2s; }
+.social-link:hover { border-color: var(--yellow); background: rgba(245,197,24,0.15); }
+.footer-col-title { font-family: var(--font-display); font-size: 1.15rem; color: var(--yellow); letter-spacing: 0.04em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px dashed rgba(245,197,24,0.3); }
+.footer-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-list li { font-size: 0.88rem; color: rgba(255,255,255,0.5); font-weight: 400; line-height: 1.4; }
+.footer-list a  { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-list a:hover { color: var(--yellow); }
+.footer-hours-item { display: flex; justify-content: space-between; gap: 10px; font-size: 0.86rem; color: rgba(255,255,255,0.45); padding: 5px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+.footer-hours-item span:first-child { font-family: var(--font-oswald); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-hours-item span:last-child  { color: var(--cream-dark); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.25); font-weight: 400; }
+/* ============================================================
+   AGGIUNTE LEGALI E ORARI FOOTER
+   ============================================================ */
+.footer-company-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255,255,255,0.1);
+}
+.footer-company-info strong {
+  color: rgba(255,255,255,0.65);
+}
+.footer-list-spacer {
+  height: 8px;
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+  margin-bottom: 8px;
+}
+.footer-small-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+}
+.footer-hours {
+  font-family: var(--font-oswald);
+  font-size: 0.9rem;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-top: 4px;
+}
+.footer-piva {
+  font-family: var(--font-oswald);
+  font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes ticker   { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes fadeUp   { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes wobble   { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(2deg)} }
+@keyframes stamp    { from{opacity:0;transform:scale(1.4) rotate(-8deg)} to{opacity:1;transform:scale(1) rotate(-6deg)} }
+@keyframes bounce   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ============================================================
+   RESPONSIVE SHARED & FIXES (UPDATED)
+   ============================================================ */
+@media(max-width:900px){
+  .nav-links, .nav-cta { display:none; }
+  .nav-hamburger { display:flex; }
+  
+  /* Filosofia grid principale a una colonna */
+  .fil-grid  { grid-template-columns:1fr; gap:40px; }
+  .fil-visual { order:-1; }
+  .fil-frame { aspect-ratio:16/9; }
+  
+  /* Griglie dei prodotti responsive */
+  .bm-grid  { grid-template-columns:1fr; width: 100%; max-width: 100%; }
+  
+  .hero-ctas { flex-direction:column; align-items:center; }
+  .phone-bar-inner { flex-direction:column; gap:6px; text-align:center; }
+  
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+/* Fix specifico per schermi piccoli e smartphone */
+@media(max-width:600px){
+  .footer-grid { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; }
+}
+
+/* Correzione definitiva per i 4 riquadri tagliati della filosofia e allineamento sezioni */
+@media(max-width:480px){
+  .fil-stats { 
+    grid-template-columns: 1fr; /* Dispone i 4 riquadri uno sotto l'altro */
+    gap: 12px;
+  }
+  
+  /* Forza le card di burger e pizza a rimanere perfettamente allineate ai margini */
+  #burger-mese .bm-grid,
+  #pizza-mese .bm-grid {
+    padding: 0;
+    width: 100%;
+  }
+}
