@@ -9,8 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ============================================================\
-   SFIDE PAGE STYLING
+/* ============================================================
+   SFIDE PAGE
    ============================================================ */
 .page-hero {
   min-height: 46vh; display: flex; align-items: flex-end;
@@ -21,40 +21,412 @@
   content: '';
   position: absolute; inset: 0;
   background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 24px 24px; pointer-events: none;
+}
+.page-hero-stripes {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(-55deg, transparent, transparent 50px,
+    rgba(245,197,24,0.05) 50px, rgba(245,197,24,0.05) 52px);
+}
+.hero-bg-num {
+  position: absolute; right: -30px; bottom: -60px;
+  font-family: var(--font-display); font-size: 24rem;
+  color: rgba(255,255,255,0.04); pointer-events: none; line-height: 1;
+}
+.page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+.page-hero-label {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.72rem;
+  letter-spacing: 0.35em; text-transform: uppercase; color: var(--yellow);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.page-hero-label::before { content: '★'; }
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11vw, 10rem);
+  line-height: 0.86; text-transform: uppercase; color: var(--white);
+  text-shadow: 5px 5px 0 rgba(0,0,0,0.3);
+}
+.page-hero-title .yellow { color: var(--yellow); }
+.page-hero-sub {
+  font-family: var(--font-oswald); font-size: 1rem; font-weight: 600;
+  color: rgba(255,255,255,0.65); letter-spacing: 0.14em; margin-top: 12px;
+  text-transform: uppercase;
 }
 
-/* BANNER DI PRENOTAZIONE GLOBALE */
-.booking-banner {
-  background: var(--navy);
-  color: var(--white);
+/* ---- SFIDE INTRO BANNER ---- */
+.sfide-banner {
+  background: var(--navy); border-bottom: 4px solid var(--yellow);
+  padding: 18px 24px;
+}
+.sfide-banner-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.sfide-banner-text {
+  font-family: var(--font-display); font-size: 1.6rem;
+  color: var(--yellow); letter-spacing: 0.04em;
+  text-shadow: 2px 2px 0 var(--navy-dark);
+}
+.sfide-banner-sub {
+  font-family: var(--font-oswald); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+}
+.sfide-banner-when {
+  background: var(--yellow); color: var(--navy-dark);
+  font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04em;
+  padding: 10px 24px; border: 3px solid var(--yellow-dark);
+  border-radius: 3px; box-shadow: 3px 3px 0 var(--yellow-dark);
   text-align: center;
-  padding: 20px;
-  margin: 30px auto;
-  border: 3px solid var(--yellow);
-  border-radius: 4px;
-  max-width: 800px;
+}
+.sfide-banner-when span {
+  display: block; font-family: var(--font-oswald); font-size: 0.68rem;
+  font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--navy-dark); opacity: 0.7;
+}
+
+/* ---- SFIDE MAIN ---- */
+#sfide-main { padding: 72px 24px; background: var(--cream); }
+.sfide-inner { max-width: 1200px; margin: 0 auto; }
+
+/* Giant featured card */
+.sfida-featured {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  border: 4px solid var(--navy); background: var(--white);
+  box-shadow: 8px 8px 0 var(--navy-dark); margin-bottom: 28px;
+  overflow: hidden;
+}
+.sfida-img {
+  background: var(--cream-dark);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 360px; position: relative;
+}
+.sfida-label-top {
+  position: absolute; top: 14px; left: -6px;
+  background: var(--red); color: var(--white);
+  font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04em;
+  padding: 6px 20px 6px 24px;
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 8px) 100%, 8px 100%);
+  box-shadow: 3px 3px 0 var(--red-dark);
+}
+.sfida-body {
+  padding: 40px 36px; display: flex; flex-direction: column; justify-content: center;
+  border-left: 4px solid var(--navy);
+}
+.sfida-eyebrow {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.72rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--red);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+}
+.sfida-eyebrow::before { content: '★ ★ ★ ★ ★'; color: var(--yellow); font-size: 0.55rem; letter-spacing: 0.2em; }
+.sfida-title {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.88; color: var(--navy);
+  text-shadow: 3px 3px 0 rgba(26,58,107,0.15);
+  margin-bottom: 12px;
+}
+.sfida-specs {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;
+}
+.sfida-spec {
+  background: var(--navy); color: var(--yellow);
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 6px 14px; border: 2px solid var(--navy-dark);
+  border-radius: 2px; box-shadow: 2px 2px 0 var(--navy-dark);
+}
+.sfida-spec.red-spec { background: var(--red); color: var(--white); border-color: var(--red-dark); box-shadow: 2px 2px 0 var(--red-dark); }
+
+.sfida-desc {
+  font-size: 0.92rem; color: var(--brown-light); font-weight: 400;
+  line-height: 1.7; margin-bottom: 16px;
+}
+.sfida-reward {
+  background: var(--yellow-pale); border: 2px dashed var(--yellow-dark);
+  padding: 12px 16px; margin-bottom: 22px;
+  font-family: var(--font-oswald); font-size: 0.82rem; font-weight: 600;
+  color: var(--navy-dark); letter-spacing: 0.04em;
+}
+.sfida-reward strong { color: var(--red); }
+
+.sfida-time-badge {
+  display: inline-block;
+  background: var(--red); color: var(--white);
+  font-family: var(--font-marker); font-size: 1.1rem;
+  padding: 8px 18px; border: 3px solid var(--red-dark);
+  transform: rotate(-3deg); margin-bottom: 20px;
+  box-shadow: 3px 3px 0 var(--red-dark);
+}
+
+/* Grid sfide secondarie */
+.sfide-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.sfida-card {
+  background: var(--white); border: 3px solid var(--navy);
+  box-shadow: 5px 5px 0 var(--navy-dark); overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.sfida-card:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--navy-dark); }
+.sfida-card-header {
+  background: var(--navy); padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sfida-card-tag {
+  font-family: var(--font-oswald); font-weight: 700; font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--yellow);
+}
+.sfida-card-price {
+  font-family: var(--font-display); font-size: 1.5rem; color: var(--white);
+  text-shadow: 1px 1px 0 var(--navy-dark);
+}
+.sfida-card-img {
+  aspect-ratio: 4/3; background: var(--cream-dark);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.sfida-card-body { padding: 20px; }
+.sfida-card-title {
+  font-family: var(--font-display); font-size: 2.2rem;
+  color: var(--navy); line-height: 0.9; margin-bottom: 8px;
+  text-shadow: 2px 2px 0 rgba(26,58,107,0.15);
+}
+.sfida-card-specs {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;
+}
+.sfida-card-spec {
+  font-family: var(--font-oswald); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--navy); background: var(--cream-dark);
+  border: 2px solid var(--navy); padding: 3px 8px;
+}
+.sfida-card-spec.hot { background: var(--red); color: var(--white); border-color: var(--red-dark); }
+.sfida-card-desc { font-size: 0.86rem; color: var(--brown-light); font-weight: 400; line-height: 1.6; margin-bottom: 10px; }
+.sfida-card-reward {
+  font-family: var(--font-oswald); font-size: 0.75rem; font-weight: 700;
+  color: var(--red); letter-spacing: 0.05em; text-transform: uppercase;
+  border-top: 2px dashed rgba(200,34,42,0.2); padding-top: 10px; margin-top: 8px;
+}
+
+/* ---- WALL OF FAME ---- */
+#wall-of-fame { padding: 72px 24px; background: var(--navy-dark); position: relative; overflow: hidden; }
+#wall-of-fame::before {
+  content: '★'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-size: 40rem; color: rgba(245,197,24,0.03); pointer-events: none; line-height: 1;
+}
+.wof-title-wrap { text-align: center; margin-bottom: 48px; }
+.wof-title {
+  font-family: var(--font-display); font-size: clamp(3rem,7vw,6rem);
+  color: var(--yellow); text-shadow: 4px 4px 0 var(--navy-dark); letter-spacing: 0.03em;
+}
+.wof-sub {
+  font-family: var(--font-oswald); font-weight: 600; font-size: 0.88rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45);
+  margin-top: 8px;
+}
+.wof-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; max-width: 1200px; margin: 0 auto; }
+.wof-card {
+  background: var(--navy); border: 3px solid rgba(245,197,24,0.25);
+  padding: 22px; text-align: center; position: relative;
+  box-shadow: 4px 4px 0 var(--navy-dark);
+  transition: border-color 0.2s;
+}
+.wof-card:hover { border-color: var(--yellow); }
+.wof-crown { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 1.3rem; }
+.wof-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--navy-light); border: 3px solid rgba(245,197,24,0.3);
+  margin: 8px auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+}
+.wof-name  { font-family: var(--font-oswald); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+.wof-sfida { font-family: var(--font-oswald); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; }
+.wof-date  { font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+
+/* ---- CTA ---- */
+.sfide-cta {
+  background: var(--yellow); border-top: 4px solid var(--yellow-dark); border-bottom: 4px solid var(--yellow-dark);
+  padding: 56px 24px; text-align: center;
+}
+.sfide-cta h2 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,4rem); color: var(--navy-dark); text-shadow: 3px 3px 0 rgba(26,58,107,0.2); margin-bottom: 10px; }
+.sfide-cta h2 .r { color: var(--red); }
+.sfide-cta p   { font-family: var(--font-oswald); font-size: 0.95rem; font-weight: 600; color: var(--navy); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
+.sfide-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+@media(max-width:900px){
+  .sfida-featured { grid-template-columns:1fr; }
+  .sfida-img      { min-height:220px; }
+  .sfida-body     { border-left:none; border-top:4px solid var(--navy); padding:24px; }
+  .sfide-grid     { grid-template-columns:1fr 1fr; }
+  .wof-grid       { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:600px){
+  .sfide-grid { grid-template-columns:1fr; }
+  .wof-grid   { grid-template-columns:1fr 1fr; }
 }
 </style>
 </head>
 <body data-page="sfide">
+<div id="ticker-anchor"></div>
 
-<section class="page-hero">
-  <h1 style="color:white; font-family:var(--font-display); font-size:4rem; margin:0;">LE SFIDE</h1>
-</section>
+<div class="page-hero">
+  <div class="page-hero-stripes"></div>
+  <div class="hero-bg-num">SFIDE</div>
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Academy Challenges</p>
+    <h1 class="page-hero-title">Le<br><span class="yellow">Sfide!</span></h1>
+    <p class="page-hero-sub">★ Entra per sempre nel Wall of Fame! ★</p>
+  </div>
+</div>
 
-<section id="sfide-elenco">
-  <div class="container">
-    
-    <div class="booking-banner">
-      ⚠️ Attenzione: Tutte le sfide Academy devono essere prenotate con anticipo!
+<!-- TICKER injected here -->
+
+<!-- BANNER -->
+<div class="sfide-banner">
+  <div class="sfide-banner-inner">
+    <div>
+      <div class="sfide-banner-text">🏆 Le Sfide dell'Academy</div>
+      <div class="sfide-banner-sub">Finisci la sfida · Vinci il premio · Entra nella leggenda</div>
+    </div>
+    <div class="sfide-banner-when">
+      Mercoledì &amp; Giovedì Sera!*
+      <span>* Disponibili anche venerdì, sabato, domenica festivi — solo su prenotazione</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     LE SFIDE
+     ================================================================ -->
+<section id="sfide-main">
+  <div class="sfide-inner">
+
+    <!-- ---- THE GIANT (featured) ---- -->
+    <div class="sfida-featured reveal">
+      <div class="sfida-img">
+        <div class="sfida-label-top">★ The Giant ★</div>
+        <!-- =====================================================
+             IMMAGINE THE GIANT: url('img/sfida-giant.jpg')
+             background-size:cover; background-position:center;
+             ===================================================== -->
+        <div class="img-ph"><span class="icon">🍔</span><p>Foto The Giant<br>(img/sfida-giant.jpg)</p></div>
+      </div>
+      <div class="sfida-body">
+        <div class="sfida-eyebrow">Sfida Principale</div>
+        <h2 class="sfida-title">THE GIANT</h2>
+        <div class="sfida-specs">
+          <div class="sfida-spec">📏 Più di 15 cm</div>
+          <div class="sfida-spec">⏱ 15 Minuti</div>
+          <div class="sfida-spec red-spec">€32,00</div>
+        </div>
+        <div class="sfida-time-badge">Hai 15 minuti per entrare nell'Olimpo dei Giganti!</div>
+        <p class="sfida-desc">
+          <strong>Triplo hamburger</strong> di Manzo 230gr, Bacon, cipolla, insalata verde, pomodoro fresco a fette, cheddar, patatine fritte e salse a volontà!
+        </p>
+        <div class="sfida-reward">
+          🏆 <strong>SE VINCI TI REGALIAMO IL PANINO!</strong>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="contatti.html" class="btn-red">Prenota la Sfida</a>
+          <a href="menu.html" class="btn-navy">Vedi il Menù</a>
+        </div>
+      </div>
     </div>
 
-    <div class="sfida-card reveal">
+    <!-- ---- GRID SFIDE SECONDARIE ---- -->
+    <div class="sfide-grid">
+
+      <!-- LUCIFER -->
+      <div class="sfida-card reveal">
+        <div class="sfida-card-header">
+          <span class="sfida-card-tag">🔥 Super Piccante!!!</span>
+          <span class="sfida-card-price">€21</span>
+        </div>
+        <div class="sfida-card-img">
+          <!-- =====================================================
+               IMMAGINE LUCIFER: url('img/sfida-lucifer.jpg')
+               ===================================================== -->
+          <div class="img-ph"><span class="icon">🔥</span><p>Foto Lucifer<br>(img/sfida-lucifer.jpg)</p></div>
+        </div>
+        <div class="sfida-card-body">
+          <h3 class="sfida-card-title">LUCIFER</h3>
+          <div class="sfida-card-specs">
+            <div class="sfida-card-spec">🥩 230gr</div>
+            <div class="sfida-card-spec">⏱ 30 min</div>
+            <div class="sfida-card-spec hot">Carolina Reaper</div>
+          </div>
+          <p class="sfida-card-desc">
+            Hamburger di Manzo da 230gr, Salsa Mamba, patè di <strong>Carolina Reaper</strong>, crispy hot extream, Spianata Calabra, cheddar, insalata, patatine fritte e salse a volontà!
+          </p>
+          <p style="font-family:var(--font-marker);font-size:.88rem;color:var(--red);margin-bottom:8px;">Finiscilo senza bere entro 30 minuti e sarai il Re degli Inferi!!</p>
+          <div class="sfida-card-reward">🏆 SE VINCI: panino in regalo + 2 bottigliette di Black Mamba</div>
+        </div>
+      </div>
+
+      <!-- WÜRSTEL-ONE -->
+      <div class="sfida-card reveal">
+        <div class="sfida-card-header">
+          <span class="sfida-card-tag">⭐ Sfida Classica</span>
+          <span class="sfida-card-price">€32</span>
+        </div>
+        <div class="sfida-card-img">
+          <!-- =====================================================
+               IMMAGINE WÜRSTEL-ONE: url('img/sfida-wurstel.jpg')
+               ===================================================== -->
+          <div class="img-ph"><span class="icon">🌭</span><p>Foto Würstel-One<br>(img/sfida-wurstel.jpg)</p></div>
+        </div>
+        <div class="sfida-card-body">
+          <h3 class="sfida-card-title">WÜRSTEL-ONE</h3>
+          <div class="sfida-card-specs">
+            <div class="sfida-card-spec">📏 43 cm</div>
+            <div class="sfida-card-spec">⚖️ 1 kg</div>
+            <div class="sfida-card-spec">⏱ 16 min</div>
+          </div>
+          <p class="sfida-card-desc">
+            Würstel di maiale Top Quality 450gr, Pane hot-dog artigianale home-made, patate dolci, formaggio artigianale al chili, sbriciolata di bacon, crema di cheddar.
+          </p>
+          <p style="font-family:var(--font-marker);font-size:.88rem;color:var(--red);margin-bottom:8px;">Sfidalo e divoralo in 16 minuti!</p>
+          <div class="sfida-card-reward">🏆 SE VINCI TI REGALIAMO IL PANINO!</div>
+        </div>
+      </div>
+
+      <!-- RE CARBONARA -->
+      <div class="sfida-card reveal">
+        <div class="sfida-card-header">
+          <span class="sfida-card-tag">👑 La Sfida del Re</span>
+          <span class="sfida-card-price">€39</span>
+        </div>
+        <div class="sfida-card-img">
+          <!-- =====================================================
+               IMMAGINE RE CARBONARA: url('img/sfida-carbonara.jpg')
+               ===================================================== -->
+          <div class="img-ph"><span class="icon">🍔</span><p>Foto Re Carbonara<br>(img/sfida-carbonara.jpg)</p></div>
+        </div>
+        <div class="sfida-card-body">
+          <h3 class="sfida-card-title">RE CARBONARA</h3>
+          <div class="sfida-card-specs">
+            <div class="sfida-card-spec">⚖️ ~1,5 kg</div>
+            <div class="sfida-card-spec">⏱ 25 min</div>
+          </div>
+          <p class="sfida-card-desc">
+            Pane carbonara al carbone con bacon, uovo e pepe di nostra produzione, <strong>Hamburger di Manzo 600gr!</strong> Pasta carbonara pasticciata homemade, guanciale croccante, patate fritte al pepe, sbriciolata di bacon, crema al cheddar.
+          </p>
+          <p style="font-family:var(--font-marker);font-size:.88rem;color:var(--red);margin-bottom:8px;">Hai 25 minuti per entrare nell'Impero!</p>
+          <div class="sfida-card-reward">🏆 SE VINCI TI REGALIAMO IL PANINO!</div>
+        </div>
+      </div>
+
+    </div><!-- /sfide-grid -->
+
+    <!-- ---- THE KILLER (featured bottom) ---- -->
+    <div class="sfida-featured reveal" style="margin-top:28px; border-color:var(--red); box-shadow:8px 8px 0 var(--red-dark);">
+      <div class="sfida-img">
+        <div class="sfida-label-top" style="background:var(--navy);">★ SOLO SU PRENOTAZIONE ★</div>
+        <!-- =====================================================
+             IMMAGINE THE KILLER: url('img/sfida-killer.jpg')
+             background-size:cover; background-position:center;
+             ===================================================== -->
+        <div class="img-ph"><span class="icon">💀</span><p>Foto The Killer<br>(img/sfida-killer.jpg)</p></div>
+      </div>
+      <div class="sfida-body" style="border-left-color:var(--red);">
+        <div class="sfida-eyebrow" style="color:var(--navy);">⚠️ Solo su prenotazione</div>
         <h2 class="sfida-title" style="color:var(--red);">THE KILLER</h2>
         <div class="sfida-specs">
           <div class="sfida-spec">🍔 6 Hamburger</div>
@@ -63,23 +435,28 @@
           <div class="sfida-spec red-spec">⏱ 1 ora</div>
           <div class="sfida-spec red-spec">€60,00</div>
         </div>
+        <div class="sfida-time-badge" style="background:var(--navy);border-color:var(--navy-dark);box-shadow:3px 3px 0 var(--navy-dark);">AMMAZZA IL KILLER! Finiscilo in 1 ora senza mai alzarti dal tavolo!</div>
         <p class="sfida-desc">
           <strong>6 Hamburger (SEI!!!) di Manzo da 230gr</strong>, Bacon, cheddar, più 2 ingredienti a scelta.
         </p>
         <div class="sfida-reward">
           🏆 <strong>SE VINCI: IL PANINO IN REGALO + UN BUONO DEL VALORE DI €60,00!</strong>
         </div>
-        <a href="contatti.html" class="btn-red">📞 Prenota ora</a>
+        <a href="contatti.html" class="btn-red">📞 Prenota The Killer</a>
+      </div>
     </div>
 
-    </div>
+  </div>
 </section>
 
-<div class="cta-band">
-  <h2 class="reveal">Hai il <span class="y">Coraggio</span>?</h2>
-  <p class="reveal">Sfide epiche, menù da urlo e due sedi dove regna l'eccesso di qualità.</p>
-  <div class="cta-btns reveal">
-    <a href="contatti.html" class="btn-navy" style="border-color:rgba(255,255,255,0.3)">📞 Contattaci e prenota</a>
+
+<!-- CTA -->
+<div class="sfide-cta">
+  <h2 class="reveal">Hai il <span class="r">Coraggio</span>?</h2>
+  <p class="reveal">★ Scegli la tua sfida · Rispetta il tempo · Svuota il piatto ★</p>
+  <div class="sfide-cta-btns reveal">
+    <a href="contatti.html" class="btn-red">📞 Prenota la Sfida</a>
+    <a href="menu.html"     class="btn-navy">📋 Vedi il Menù</a>
   </div>
 </div>
 
