@@ -172,27 +172,27 @@
 </div>
 
 <script src="shared-nav.js"></script>
-
-<script>
+  <script>
 async function caricaSpecialitaHome() {
   try {
-    // Carica testo Burger (Cerca nella cartella testi/)
-    const risBurger = await fetch('testi/burger-mese.txt');
-    if (risBurger.ok) {
-      const tomo = await risBurger.text();
-      const linee = tomo.split('\n');
-      if (linee[0]) document.getElementById('burger-mese-titolo').innerText = linee[0].trim();
-      if (linee[1]) document.getElementById('burger-mese-desc').innerText = linee[1].trim();
-    }
+    // Caricamento Burger
+    const [resBTitle, resBDesc] = await Promise.all([
+      fetch('testi/burger-titolo.txt'),
+      fetch('testi/burger-desc.txt')
+    ]);
 
-    // Carica testo Pizza (Cerca nella cartella testi/)
-    const risPizza = await fetch('testi/pizza-mese.txt');
-    if (risPizza.ok) {
-      const tomo = await risPizza.text();
-      const linee = tomo.split('\n');
-      if (linee[0]) document.getElementById('pizza-mese-titolo').innerText = linee[0].trim();
-      if (linee[1]) document.getElementById('pizza-mese-desc').innerText = linee[1].trim();
-    }
+    if (resBTitle.ok) document.getElementById('burger-mese-titolo').innerText = await resBTitle.text();
+    if (resBDesc.ok) document.getElementById('burger-mese-desc').innerText = await resBDesc.text();
+
+    // Caricamento Pizza
+    const [resPTitle, resPDesc] = await Promise.all([
+      fetch('testi/pizza-titolo.txt'),
+      fetch('testi/pizza-desc.txt')
+    ]);
+
+    if (resPTitle.ok) document.getElementById('pizza-mese-titolo').innerText = await resPTitle.text();
+    if (resPDesc.ok) document.getElementById('pizza-mese-desc').innerText = await resPDesc.text();
+
   } catch (err) {
     console.error("Errore durante il recupero delle novità del mese:", err);
   }
