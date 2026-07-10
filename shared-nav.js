@@ -74,7 +74,8 @@ const footer = `
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 ACADEMY Evergreen Burger. Tutti i diritti riservati.</p>
+    <p>© 2026 ACADEMY Evergreen Burger. Tutti i diritti riservati.
+  developed by: <a href="https://www.instagram.com/alberto.vegro?igsh=N2Jhb2xiYXM1enQ5">Vegro Alberto</a> </p>
   </div>
 </footer>`;
 
