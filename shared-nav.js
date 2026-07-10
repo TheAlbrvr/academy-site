@@ -64,13 +64,6 @@ const footer = `
       <a href="contatti.html">Contatti</a>
     </div>
 
-    <div class="footer-col">
-      <h3>Info & Orari</h3>
-      <p>📍 Bovolenta & Valli di Chioggia</p>
-      <p>📞 049 123 4567</p>
-      <p>⏰ Aperto tutti i giorni</p>
-    </div>
-
   </div>
 
   <div class="footer-bottom">
