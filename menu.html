@@ -4,186 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menù &amp; Sedi — ACADEMY Evergreen Burger</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ============================================================
-   MENU PAGE
-   ============================================================ */
-.page-hero {
-  min-height: 38vh; display: flex; align-items: flex-end;
-  padding: 80px 24px 48px; position: relative; overflow: hidden;
-  background: var(--navy-dark);
-}
-.page-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(245,197,24,0.07) 1px, transparent 1px);
-  background-size: 26px 26px; pointer-events: none;
-}
-.page-hero-stripes {
-  position: absolute; inset: 0; pointer-events: none;
-  background: repeating-linear-gradient(-55deg, transparent, transparent 60px,
-    rgba(245,197,24,0.02) 60px, rgba(245,197,24,0.02) 62px);
-}
+/* Stili invariati per mantenere la coerenza visiva con Bovolenta */
+.page-hero { min-height: 38vh; display: flex; align-items: flex-end; padding: 80px 24px 48px; position: relative; overflow: hidden; background: var(--navy-dark); }
 .page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
-.page-hero-label {
-  font-family: var(--font-oswald); font-weight: 600; font-size: 0.72rem;
-  letter-spacing: 0.35em; text-transform: uppercase; color: var(--yellow);
-  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-}
-.page-hero-label::before { content: '★'; font-size: 0.6rem; }
-.page-hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  line-height: 0.88; text-transform: uppercase; color: var(--white);
-  text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3);
-}
-.page-hero-title .yellow { color: var(--yellow); }
-.page-hero-sub {
-  font-family: var(--font-oswald); font-size: 0.95rem; font-weight: 500;
-  color: rgba(255,255,255,0.5); letter-spacing: 0.12em; margin-top: 12px;
-  text-transform: uppercase;
-}
-
-/* ---- TABS ---- */
-.sede-tabs-wrap {
-  background: var(--navy); border-bottom: 4px solid var(--yellow);
-  position: sticky; top: 66px; z-index: 100;
-}
+.page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3); }
+.yellow { color: var(--yellow); }
+.red { color: var(--red); }
+.sede-tabs-wrap { background: var(--navy); border-bottom: 4px solid var(--yellow); position: sticky; top: 0; z-index: 100; }
 .sede-tabs { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; }
-.tab-btn {
-  font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.55); background: transparent;
-  border: none; border-bottom: 4px solid transparent;
-  padding: 16px 26px; cursor: pointer; margin-bottom: -4px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.tab-btn:hover { color: var(--cream); }
+.tab-btn { font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); background: transparent; border: none; border-bottom: 4px solid transparent; padding: 16px 26px; cursor: pointer; }
 .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
-
-/* ---- SEDE SECTION ---- */
 .sede-section { padding: 72px 24px; background: var(--cream); }
-.sede-section:nth-child(even) { background: var(--cream-dark); }
 .sede-section.hidden { display: none; }
 .sede-inner { max-width: 1200px; margin: 0 auto; }
-
-.sede-top {
-  display: grid; grid-template-columns: 1fr auto;
-  align-items: start; gap: 36px; margin-bottom: 48px;
-}
-.sede-num {
-  font-family: var(--font-display); font-size: 5rem;
-  color: rgba(26,58,107,0.1); line-height: 1; margin-bottom: -16px;
-}
-.sede-title {
-  font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.5rem);
-  line-height: 0.9; color: var(--navy);
-  text-shadow: 3px 3px 0 rgba(26,58,107,0.15);
-}
-.sede-title .red { color: var(--red); }
-.sede-address {
-  font-family: var(--font-cond); font-size: 0.92rem; font-weight: 700;
-  color: var(--brown-light); letter-spacing: 0.08em; margin-top: 10px;
-}
-.sede-ctas { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-.sede-phone {
-  font-family: var(--font-display); font-size: 1.6rem;
-  color: var(--red); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  text-shadow: 2px 2px 0 rgba(200,34,42,0.2);
-  transition: color 0.2s;
-}
-.sede-phone:hover { color: var(--red-dark); }
-
-/* ---- MENU GRID ---- */
-.menu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 44px; }
-
-.menu-cat {
-  background: var(--white); border: 3px solid var(--navy);
-  box-shadow: 5px 5px 0 var(--navy-dark); padding: 24px;
-  position: relative;
-}
-/* corner stars */
-.menu-cat::before {
-  content: '★';
-  position: absolute; top: 8px; right: 10px;
-  font-size: 0.8rem; color: var(--yellow); opacity: 0.5;
-}
-.menu-cat-icon { font-size: 1.7rem; margin-bottom: 8px; }
-.menu-cat-title {
-  font-family: var(--font-display); font-size: 1.5rem;
-  color: var(--navy); letter-spacing: 0.03em; margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 2px dashed rgba(26,58,107,0.2);
-}
-.menu-sub-title {
-  font-family: var(--font-display); font-size: 1.1rem;
-  color: var(--red); margin: 14px 0 10px;
-}
-.menu-divider { height: 2px; background: rgba(26,58,107,0.08); margin: 14px 0; border: none; }
-
-.menu-item {
-  padding: 9px 0; border-bottom: 1px dashed rgba(26,58,107,0.12);
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
-}
-.menu-item:last-of-type { border-bottom: none; }
-.menu-item-name {
-  font-family: var(--font-oswald); font-weight: 700; font-size: 0.9rem;
-  letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy-dark);
-}
-.menu-item-desc {
-  font-size: 0.76rem; color: var(--brown-light); font-weight: 400;
-  line-height: 1.4; margin-top: 2px;
-}
-.menu-item-price {
-  font-family: var(--font-display); font-size: 1.1rem;
-  color: var(--red); white-space: nowrap; flex-shrink: 0;
-}
-.menu-note {
-  font-size: 0.72rem; color: var(--brown-light); font-style: italic;
-  margin-top: 14px; opacity: 0.6; line-height: 1.5;
-}
-
-/* ---- ORDINA BOX ---- */
-.ordina-box {
-  background: var(--navy); border: 4px solid var(--yellow);
-  box-shadow: 6px 6px 0 var(--navy-dark);
-  padding: 28px 32px;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-}
-.ordina-title { font-family: var(--font-display); font-size: 2rem; color: var(--yellow); letter-spacing: 0.02em; text-shadow: 2px 2px 0 var(--navy-dark); }
-.ordina-sub   { font-family: var(--font-oswald); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); margin-top: 3px; text-transform: uppercase; }
-.ordina-btns  { display: flex; gap: 10px; flex-wrap: wrap; }
-
-@media(max-width:900px){
-  .menu-grid { grid-template-columns: 1fr; }
-  .sede-top  { grid-template-columns: 1fr; }
-  .sede-ctas { align-items: flex-start; }
-  .ordina-box { flex-direction: column; }
-}
+.menu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+.menu-cat { background: var(--white); border: 3px solid var(--navy); box-shadow: 5px 5px 0 var(--navy-dark); padding: 24px; }
+.menu-cat-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); border-bottom: 2px dashed rgba(26,58,107,0.2); padding-bottom: 10px; margin-bottom: 14px; }
+.menu-item { padding: 9px 0; border-bottom: 1px dashed rgba(26,58,107,0.12); display: flex; justify-content: space-between; align-items: flex-start; }
+.menu-item-name { font-weight: 700; text-transform: uppercase; }
+.menu-item-price { color: var(--red); font-weight: bold; }
+@media(max-width:900px){ .menu-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
-<body data-page="menu">
-<div id="ticker-anchor"></div>
+<body>
 
 <div class="page-hero">
-  <div class="page-hero-stripes"></div>
   <div class="page-hero-inner">
-    <p class="page-hero-label">Academy Evergreen Burger</p>
     <h1 class="page-hero-title">Menù &amp;<br><span class="yellow">Sedi</span></h1>
-    <p class="page-hero-sub">★ Due sedi · Un'unica filosofia · Tutto XXL · Qualità vera ★</p>
   </div>
 </div>
 
-<!-- SEDE TABS -->
 <div class="sede-tabs-wrap">
   <div class="sede-tabs">
     <button class="tab-btn active" onclick="showSede('bovolenta',this)">📍 Bovolenta</button>
-    <button class="tab-btn"        onclick="showSede('valli',this)">📍 Valli di Chioggia</button>
+    <button class="tab-btn" onclick="showSede('valli',this)">📍 Valli di Chioggia</button>
   </div>
 </div>
 
@@ -192,30 +48,13 @@
      ================================================================ -->
 <section class="sede-section" id="bovolenta">
   <div class="sede-inner">
-
-    <div class="sede-top reveal">
-      <div>
-        <div class="sede-num">01</div>
-        <h2 class="sede-title">Sede di<br><span class="red">Bovolenta</span></h2>
-        <p class="sede-address">📍 Piazza Accademia 24, 35024 Bovolenta (PD) &nbsp;·&nbsp; Chiuso Lunedì e Martedì</p>
-      </div>
-      <div class="sede-ctas">
-        <a href="tel:+393515846881" class="sede-phone">351 584 6881</a>
-        <a href="https://www.cooperto.link/e19e38" target="_blank" class="btn-red">Prenota Online</a>
-        <a href="https://maps.google.com/?q=Piazza+Accademia+24,+Bovolenta" target="_blank" class="btn-navy">Apri in Maps</a>
-      </div>
-    </div>
-
-    <!-- NOTA DI PRODUZIONE SEGNALATA SUL MENU -->
-    <div style="background: var(--navy); color: var(--white); padding: 12px 20px; font-family: var(--font-oswald); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: 24px; border: 2px dashed var(--yellow); box-shadow: 4px 4px 0 var(--navy-dark);">
-      🍔 Tutti i nostri burger vengono serviti con una porzione di patatine fritte! PANE SEMPRE FRESCO DI NOSTRA PRODUZIONE! 🥖
-    </div>
-
+    <h2 class="sede-title">Sede di <span class="red">Bovolenta</span></h2>
+    
     <div class="menu-grid reveal">
 
       <!-- COLONNA 1: BURGER XXL (I CLASSICI) -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">🍔</div>
+        <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Burger XXL — I Classici</h3>
         
         <div class="menu-item">
@@ -247,7 +86,7 @@
           <div class="menu-item-price">€ 18,00</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Habanero 🌶️</div><div class="menu-item-desc">Hamburger di ANGUS da 230gr, salsa habanero extra hot, peperoni, anelli di cipolla, cheddar.</div></div>
+          <div><div class="menu-item-name">Habanero</div><div class="menu-item-desc">Hamburger di ANGUS da 230gr, salsa habanero extra hot, peperoni, anelli di cipolla, cheddar.</div></div>
           <div class="menu-item-price">€ 18,50</div>
         </div>
         <div class="menu-item">
@@ -266,7 +105,7 @@
 
       <!-- COLONNA 2: BURGER XXL (I LEGGENDARI) -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">👑</div>
+        <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Burger XXL — I Leggendari</h3>
         
         <div class="menu-item">
@@ -326,14 +165,14 @@
           <div class="menu-item-price">€ 28,00</div>
         </div>
         <div class="menu-item" style="border: 2px solid var(--red); padding: 6px; background: var(--yellow-pale);">
-          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL 🏆</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo. (Peso complessivo: 1kg circa!)</div></div>
+          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo. (Peso complessivo: 1kg circa!)</div></div>
           <div class="menu-item-price">€ 30,00</div>
         </div>
       </div>
 
       <!-- COLONNA 3: VEGGY & GLUTEN FREE -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">🌱</div>
+        <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Veggy &amp; Gluten Free</h3>
         
         <div class="menu-item">
@@ -352,8 +191,8 @@
 
       <!-- COLONNA 4: CHICAGO'S PIZZA (CLASSICHE) -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">🍕</div>
-        <h3 class="menu-cat-title">Chicago's Pizza — Classiche</h3>
+        <div class="menu-cat-icon"></div>
+        <h3 class="menu-cat-title">Chicago's Pizza</h3>
         <p class="menu-note" style="margin-top:-4px; margin-bottom:12px;">Soffice e fragrante stile USA (700g-900g) con bordo ripieno di crema al formaggio, base pomodoro saporito, white &amp; orange cheddar</p>
         
         <div class="menu-item">
@@ -380,13 +219,6 @@
           <div><div class="menu-item-name">Big Mama</div><div class="menu-item-desc">Polpettine di maiale e pollo al sugo, spolverata di Grana in cottura.</div></div>
           <div class="menu-item-price">€ 18,00</div>
         </div>
-      </div>
-
-      <!-- COLONNA 5: CHICAGO'S PIZZA (SPECIALITÀ) -->
-      <div class="menu-cat">
-        <div class="menu-cat-icon">🍕</div>
-        <h3 class="menu-cat-title">Chicago's Pizza — Specialità</h3>
-        <p class="menu-note" style="margin-top:-4px; margin-bottom:12px;">Le ricette speciali stile Academy con bordo ripieno di crema al formaggio e mix di cheddar</p>
 
         <div class="menu-item">
           <div><div class="menu-item-name">Academy</div><div class="menu-item-desc">Porchetta tipo Ariccia, patate crisscuts e una cascata di cheddar cremoso.</div></div>
@@ -416,7 +248,7 @@
 
       <!-- COLONNA 6: HEY HOT-DOG LOL! -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">🌭</div>
+        <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Hot-Dog Giganti (25cm)</h3>
         <p class="menu-note" style="margin-top:-4px; margin-bottom:8px;">Peso 600g-800g. Con pane artigianale di nostra produzione!</p>
         
@@ -442,7 +274,7 @@
           <div class="menu-item-price">€ 19,50</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Black Mamba 🌶️</div><div class="menu-item-desc">Spianata calabra, salsa mamba extra hot, formaggio al chili, nuggets di Jalapeno e cheddar.</div></div>
+          <div><div class="menu-item-name">Black Mamba </div><div class="menu-item-desc">Spianata calabra, salsa mamba extra hot, formaggio al chili, nuggets di Jalapeno e cheddar.</div></div>
           <div class="menu-item-price">€ 21,00</div>
         </div>
         <div class="menu-item">
@@ -459,69 +291,13 @@
         </div>
       </div>      
 
-      <!-- COLONNA 7: APETIZER & SFIZI (FRITTI) -->
-      <div class="menu-cat">
-        <div class="menu-cat-icon">🍟</div>
-        <h3 class="menu-cat-title">Apetizer &amp; Sfizi</h3>
-        
-        <div class="menu-item">
-          <div><div class="menu-item-name">Anelli di Cipolla</div><div class="menu-item-desc">Pastella croccante</div></div>
-          <div class="menu-item-price">€ 6,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Bastoncini di Mozzarella</div><div class="menu-item-desc">Filanti e dorati</div></div>
-          <div class="menu-item-price">€ 6,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Pepite di Pollo</div><div class="menu-item-desc">Teneri bocconcini sfiziosi</div></div>
-          <div class="menu-item-price">€ 6,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Alette di Pollo (8 pz)</div><div class="menu-item-desc">Saporite e leggermente speziate</div></div>
-          <div class="menu-item-price">€ 9,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Crispy Hot Kicks</div><div class="menu-item-desc">Bocconcini di formaggio piccante</div></div>
-          <div class="menu-item-price">€ 6,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Patatine Fritte</div><div class="menu-item-desc">Porzione classica super croccante</div></div>
-          <div class="menu-item-price">€ 5,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Corn-Dog (1 pz)</div><div class="menu-item-desc">Wurstel pastellato in stile americano</div></div>
-          <div class="menu-item-price">€ 4,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Bocconcini di Camembert</div><div class="menu-item-desc">Formaggio morbido impanato</div></div>
-          <div class="menu-item-price">€ 6,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Stick di Polenta</div><div class="menu-item-desc">Al formaggio gustoso</div></div>
-          <div class="menu-item-price">€ 6,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Patatine Fritte Dolci</div><div class="menu-item-desc">Patate dolci americane fritte</div></div>
-          <div class="menu-item-price">€ 6,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Fritto Misto</div><div class="menu-item-desc">2 anelli cipolla, 2 mozzarella stick, 2 camembert, pepite pollo, patatine.</div></div>
-          <div class="menu-item-price">€ 12,90</div>
-        </div>
-        <hr class="menu-divider">
-        <div class="menu-sub-title">🍟 Carica il tuo Panino!</div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Smooked / Academy Fries</div><div class="menu-item-desc">Patatine fritte con crema cheddar o cacio&amp;pepe, salsiccia affumicata e bacon croccante. (+€3,20 se aggiunto direttamente nel panino).</div></div>
-          <div class="menu-item-price">€ 7,00</div>
-        </div>
-      </div>
 
       <!-- COLONNA 8: PIATTI UNICI & INSALATONE -->
       <div class="menu-cat">
-        <div class="menu-cat-icon">🍽️</div>
+        <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Piatti Unici &amp; Insalate</h3>
         
-        <div class="menu-sub-title">🥩 I Piatti Unici</div>
+        <div class="menu-sub-title"> I Piatti Unici</div>
         <p class="menu-note" style="margin-top:-4px; margin-bottom:8px;">Compresi di contorno a scelta tra patatine fritte o verdure grigliate</p>
         <div class="menu-item">
           <div><div class="menu-item-name">Scottona</div><div class="menu-item-desc">Burger di MANZO SCOTTONA da 300gr con contorno*.</div></div>
@@ -541,7 +317,7 @@
         </div>
 
         <hr class="menu-divider">
-        <div class="menu-sub-title">🥗 Le Insalatone</div>
+        <div class="menu-sub-title"> Le Insalatone</div>
         <div class="menu-item">
           <div><div class="menu-item-name">Beef Salad</div><div class="menu-item-desc">Insalata, pomodoro, tagliata di MANZO-BURGER, crostini dorati.</div></div>
           <div class="menu-item-price">€ 14,00</div>
@@ -552,200 +328,101 @@
         </div>
       </div>
 
-      <!-- COLONNA 9: KIDS, APERITIVI & CAFFÈ -->
-      <div class="menu-cat">
-        <div class="menu-cat-icon">🥤</div>
-        <h3 class="menu-cat-title">Kids Menù &amp; Bar</h3>
-        
-        <div class="menu-sub-title">👶 Kids Menù (Fino a 12 anni)</div>
-        <p class="menu-note" style="margin-top:-4px; margin-bottom:8px;">Comprendono patatine fritte e bibita piccola</p>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Chicco Menù</div><div class="menu-item-desc">1 MAXI WURSTEL alla piastra.</div></div>
-          <div class="menu-item-price">€ 8,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Junior Menù</div><div class="menu-item-desc">Burger di manzo o cotoletta pollo (100gr) + 2 ingredienti.</div></div>
-          <div class="menu-item-price">€ 10,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Corn-Dog Menù</div><div class="menu-item-desc">2 WURSTEL con stecchino pastellati con farina di mais.</div></div>
-          <div class="menu-item-price">€ 11,00</div>
-        </div>
-
-        <hr class="menu-divider">
-        <div class="menu-sub-title">🍾 Bibite in Bottiglia</div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Acqua Naturale / Frizzante</div><div class="menu-item-desc">0,75 lt</div></div>
-          <div class="menu-item-price">€ 2,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Coca-Cola / Coca-Zero</div><div class="menu-item-desc">0,33 lt</div></div>
-          <div class="menu-item-price">€ 3,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Fanta / Sprite</div><div class="menu-item-desc">0,33 lt</div></div>
-          <div class="menu-item-price">€ 3,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Lemon Soda</div><div class="menu-item-desc">0,25 lt</div></div>
-          <div class="menu-item-price">€ 2,60</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Tea Limone / Pesca</div><div class="menu-item-desc">0,25 lt</div></div>
-          <div class="menu-item-price">€ 3,50</div>
-        </div>
-
-        <hr class="menu-divider">
-        <div class="menu-sub-title">🍹 Aperitivi &amp; Caffetteria</div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Spritz (Aperol / Campari / Misto)</div></div>
-          <div class="menu-item-price">€ 4,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Prosecco DOC</div></div>
-          <div class="menu-item-price">€ 3,50</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Caffè (Normale / Deca / Macchiato)</div></div>
-          <div class="menu-item-price">€ 1,40</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Caffè Corretto / Ginseng / Orzo</div></div>
-          <div class="menu-item-price">€ 1,60 - 2,00</div>
-        </div>
-        <div class="menu-item">
-          <div><div class="menu-item-name">Amari &amp; Liquori Selezionati</div></div>
-          <div class="menu-item-price">da € 3,00</div>
-        </div>
-        <p class="menu-note">🍰 Voglia di dolce? Chiedi consiglio al personale! (€ 3,00 - 7,00). Selezione di birre alla spina disponibile al bancone.</p>
-      </div>
 
     </div><!-- /menu-grid -->
-
+    
   </div>
 </section>
 
-  <!-- ================================================================
-     MENU COMPLETO - ACADEMY EVERGREEN BURGER
-     Organizzazione basata su modello di riferimento[span_2](start_span)[span_2](end_span)
+<!-- ================================================================
+     SEDE 2 — VALLI DI CHIOGGIA
      ================================================================ -->
+<section class="sede-section hidden" id="valli">
+  <div class="sede-inner">
+    <h2 class="sede-title">Sede di <span class="red">Valli di Chioggia</span></h2>
+    
+    <div class="menu-grid">
+      
+      
+    
 
-<section class="menu-grid">
+      <!-- Burger Academy -->
+      <div class="menu-cat">
+        <h3 class="menu-cat-title">Burger Academy</h3>
+        <div class="menu-item"><div>WAGYU (Wagyu 200g, insalata, pomodoro, cipolla, cheddar)</div><div class="menu-item-price">€ 28,00</div></div>
+        <div class="menu-item"><div>BUFALO (Bufalo 230g, bacon, camembert, cheddar)</div><div class="menu-item-price">€ 18,90</div></div>
+        <div class="menu-item"><div>PULLED PORK (Maiale speziato, fuso, cipolla Tropea)</div><div class="menu-item-price">€ 18,00</div></div>
+        <div class="menu-item"><div>HABANERO (Angus 230g, salsa habanero, peperoni, anelli cipolla)</div><div class="menu-item-price">€ 18,50</div></div>
+        <div class="menu-item"><div>CANGAROO (Canguro 230g, cipolla Tropea, remoulade, crispy hot)</div><div class="menu-item-price">€ 19,00</div></div>
+        <div class="menu-item"><div>TOSCANO (Chianina 200g, salvia, pesto noci, fontina, cinghiale)</div><div class="menu-item-price">€ 19,00</div></div>
+        <div class="menu-item"><div>DAKOTA (Doppio hamburger 230g, peperoni, bacon, cheddar)</div><div class="menu-item-price">€ 22,90</div></div>
+        <div class="menu-item"><div>VENETO (Manzo 230g, fontina, grana, funghi, stick polenta, sopressa)</div><div class="menu-item-price">€ 19,00</div></div>
+        <div class="menu-item"><div>PASTRAMI (Pastrami 200g, cheddar, sugo carne)</div><div class="menu-item-price">€ 18,90</div></div>
+        <div class="menu-item"><div>CERVO (Cervo 230g, salsa barbecue, bacon, cheddar)</div><div class="menu-item-price">€ 18,00</div></div>
+        <div class="menu-item"><div>CRUNCHY (Pollo 200g, panatura cereali, insalata, cheddar)</div><div class="menu-item-price">€ 17,50</div></div>
+        <div class="menu-item"><div>PORKONION (Manzo 230g, porchetta, fontina, anelli cipolla)</div><div class="menu-item-price">€ 19,00</div></div>
+        <div class="menu-item"><div>AMERICANO (Angus 230g, barbecue, bacon, cheddar)</div><div class="menu-item-price">€ 16,90</div></div>
+        <div class="menu-item"><div>ANGUS (Angus 230g, insalata, pomodoro, cheddar)</div><div class="menu-item-price">€ 15,90</div></div>
+        <div class="menu-item"><div>CHIANINA (Chianina 200g, insalata, pomodoro, cheddar)</div><div class="menu-item-price">€ 16,90</div></div>
+      </div>
 
-  <!-- 1. APPETIZER -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🍟</div>
-    <h3 class="menu-cat-title">Appetizer</h3>
-    <div class="menu-item"><div>Anelli di Cipolla</div><div class="menu-item-price">€ 6,00</div></div>
-    <div class="menu-item"><div>Bastoncini di mozzarella</div><div class="menu-item-price">€ 6,50</div></div>
-    <div class="menu-item"><div>Pepite di pollo</div><div class="menu-item-price">€ 6,50</div></div>
-    <div class="menu-item"><div>Alette di pollo (8 pz)</div><div class="menu-item-price">€ 9,50</div></div>
-    <div class="menu-item"><div>Crispy hot kicks</div><div class="menu-item-price">€ 6,00</div></div>
-    <div class="menu-item"><div>Patatine fritte</div><div class="menu-item-price">€ 5,50</div></div>
-    <div class="menu-item"><div>CORN-DOG (1 pz)</div><div class="menu-item-price">€ 4,50</div></div>
-    <div class="menu-item"><div>Bocconcini di Camembert</div><div class="menu-item-price">€ 6,50</div></div>
-    <div class="menu-item"><div>Stick di polenta al formaggio</div><div class="menu-item-price">€ 6,00</div></div>
-    <div class="menu-item"><div>Patatine fritte dolci</div><div class="menu-item-price">€ 6,50</div></div>
-    <div class="menu-item"><div>Fritto misto</div><div class="menu-item-price">€ 12,90</div></div>
+      <!-- Burritos Academy XL -->
+      <div class="menu-cat">
+        <h3 class="menu-cat-title">Burritos Academy XL</h3>
+        <div class="menu-item"><div>ALL'ARREMBAGGIO (Porchetta, risotto, cacio e pepe)</div><div class="menu-item-price">€ 19,00</div></div>
+        <div class="menu-item"><div>CAPPELLO DI PAGLIA (Fajita pollo, risotto, nuggets)</div><div class="menu-item-price">€ 20,00</div></div>
+        <div class="menu-item"><div>OLANDESE VOLANTE (Zucchine/peperoni, risotto, camembert)</div><div class="menu-item-price">€ 18,00</div></div>
+        <div class="menu-item"><div>KRAKEN (Tagliata manzo, risotto, bacon, cheddar)</div><div class="menu-item-price">€ 20,00</div></div>
+      </div>
+
+      <!-- Burger Esclusivi -->
+      <div class="menu-cat">
+        <h3 class="menu-cat-title">Burger Esclusivi</h3>
+        <div class="menu-item"><div>Perla Nera (Doppio 226g, bacon rum, mozzarella stick, cheddar)</div><div class="menu-item-price">€ 27,00</div></div>
+        <div class="menu-item"><div>Sputafuoco (Doppio 226g, frittata piccante, camembert, salsa mamba)</div><div class="menu-item-price">€ 26,00</div></div>
+      </div>
+
+      <!-- Veggie, Gluten Free & Piatti -->
+      <div class="menu-cat">
+        <h3 class="menu-cat-title">Veggie & Piatti Unici</h3>
+        <div class="menu-item"><div>NO MEAT (Vegan: Bio 100g, peperoni, zucchine)</div><div class="menu-item-price">€ 16,00</div></div>
+        <div class="menu-item"><div>NO GLUTEN (Manzo 150g, bacon, cheddar)</div><div class="menu-item-price">€ 16,00</div></div>
+        <div class="menu-item"><div>VEGGIE (Cotoletta vegetariana, remoulade, zucchine)</div><div class="menu-item-price">€ 15,00</div></div>
+        <div class="menu-item"><div>SCOTTONA (300gr + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
+        <div class="menu-item"><div>FAJITAS BURGER (Tagliata 226g + tortilla + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
+        <div class="menu-item"><div>COTOLETTA XXL (250gr + contorno)</div><div class="menu-item-price">€ 15,90</div></div>
+        <div class="menu-item"><div>CHICKEN PICK (2 spiedini pollo + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
+        <div class="menu-item"><div>BEEF Salad</div><div class="menu-item-price">€ 14,00</div></div>
+        <div class="menu-item"><div>CAESAR Salad</div><div class="menu-item-price">€ 14,00</div></div>
+      </div>
+
+     <!-- Appetizer -->
+      <div class="menu-cat">
+        <h3 class="menu-cat-title">Appetizer</h3>
+        <div class="menu-item"><div>Anelli di Cipolla</div><div class="menu-item-price">€ 6,00</div></div>
+        <div class="menu-item"><div>Bastoncini di mozzarella</div><div class="menu-item-price">€ 6,50</div></div>
+        <div class="menu-item"><div>Pepite di pollo</div><div class="menu-item-price">€ 6,50</div></div>
+        <div class="menu-item"><div>Alette di pollo (8 pz)</div><div class="menu-item-price">€ 9,50</div></div>
+        <div class="menu-item"><div>Crispy hot kicks</div><div class="menu-item-price">€ 6,00</div></div>
+        <div class="menu-item"><div>Patatine fritte</div><div class="menu-item-price">€ 5,50</div></div>
+        <div class="menu-item"><div>CORN-DOG (1 pz)</div><div class="menu-item-price">€ 4,50</div></div>
+        <div class="menu-item"><div>Bocconcini di Camembert</div><div class="menu-item-price">€ 6,50</div></div>
+        <div class="menu-item"><div>Stick di polenta al formaggio</div><div class="menu-item-price">€ 6,00</div></div>
+        <div class="menu-item"><div>Patatine fritte dolci</div><div class="menu-item-price">€ 6,50</div></div>
+        <div class="menu-item"><div>Fritto misto</div><div class="menu-item-price">€ 12,90</div></div>
+      </div>
+      
+    </div>
   </div>
-
-  <!-- 2. LE SFIDE -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🔥</div>
-    <h3 class="menu-cat-title">Le Sfide</h3>
-    <div class="menu-item"><div>THE GIANT (Triplo hamburger 230g, bacon, cipolla, insalata, pomodoro, cheddar, patatine)</div><div class="menu-item-price">€ 34,00</div></div>
-    <div class="menu-item"><div>LUCIFER (Hamburger 230g, Carolina Reaper, crispy hot, spianata calabrese, cheddar, insalata)</div><div class="menu-item-price">€ 23,00</div></div>
-    <div class="menu-item"><div>WÜRSTEL-ONE (Wurstel artigianale 450g, patate dolci, formaggio chili, bacon, crema cheddar)</div><div class="menu-item-price">€ 34,00</div></div>
-    <div class="menu-item"><div>RE CARBONARA (Hamburger 600g, pasta carbonara, guanciale, bacon, crema cheddar)</div><div class="menu-item-price">€ 42,00</div></div>
-    <div class="menu-item"><div>THE KILLER (6 hamburger 230g, bacon, cheddar, 2 ingredienti scelta)</div><div class="menu-item-price">€ 60,00</div></div>
-  </div>
-
-  <!-- 3. BURGER ACADEMY -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🍔</div>
-    <h3 class="menu-cat-title">Burger Academy</h3>
-    <div class="menu-item"><div>WAGYU (Wagyu 200g, insalata, pomodoro, cipolla, cheddar)</div><div class="menu-item-price">€ 28,00</div></div>
-    <div class="menu-item"><div>BUFALO (Bufalo 230g, bacon, camembert, cheddar)</div><div class="menu-item-price">€ 18,90</div></div>
-    <div class="menu-item"><div>PULLED PORK (Maiale speziato, fuso, cipolla Tropea)</div><div class="menu-item-price">€ 18,00</div></div>
-    <div class="menu-item"><div>HABANERO (Angus 230g, salsa habanero, peperoni, anelli cipolla)</div><div class="menu-item-price">€ 18,50</div></div>
-    <div class="menu-item"><div>CANGAROO (Canguro 230g, cipolla Tropea, remoulade, crispy hot)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>TOSCANO (Chianina 200g, salvia, pesto noci, fontina, cinghiale)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>DAKOTA (Doppio hamburger 230g, peperoni, bacon, cheddar)</div><div class="menu-item-price">€ 22,90</div></div>
-    <div class="menu-item"><div>VENETO (Manzo 230g, fontina, grana, funghi, stick polenta, sopressa)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>PASTRAMI (Pastrami 200g, cheddar, sugo carne)</div><div class="menu-item-price">€ 18,90</div></div>
-    <div class="menu-item"><div>CERVO (Cervo 230g, salsa barbecue, bacon, cheddar)</div><div class="menu-item-price">€ 18,00</div></div>
-    <div class="menu-item"><div>CRUNCHY (Pollo 200g, panatura cereali, insalata, cheddar)</div><div class="menu-item-price">€ 17,50</div></div>
-    <div class="menu-item"><div>PORKONION (Manzo 230g, porchetta, fontina, anelli cipolla)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>AMERICANO (Angus 230g, barbecue, bacon, cheddar)</div><div class="menu-item-price">€ 16,90</div></div>
-    <div class="menu-item"><div>ANGUS (Angus 230g, insalata, pomodoro, cheddar)</div><div class="menu-item-price">€ 15,90</div></div>
-    <div class="menu-item"><div>CHIANINA (Chianina 200g, insalata, pomodoro, cheddar)</div><div class="menu-item-price">€ 16,90</div></div>
-    <div class="menu-item"><div>CARLO V (Doppio 230g, nuggets emmental/patata, Charles Quint, bacon, funghi)</div><div class="menu-item-price">€ 24,90</div></div>
-    <div class="menu-item"><div>CARBONARA (Manzo 230g, rigatoni carbonara, guanciale)</div><div class="menu-item-price">€ 20,00</div></div>
-    <div class="menu-item"><div>LAZIO (Manzo 230g, gnocchi romana, frittata cacio/pepe, porchetta)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>PATANEGRA (Iberico 200g, cipolla, cheddar, crema salvia)</div><div class="menu-item-price">€ 18,90</div></div>
-    <div class="menu-item"><div>Perla Nera (Doppio 226g, bacon rum, mozzarella stick, cheddar)</div><div class="menu-item-price">€ 27,00</div></div>
-    <div class="menu-item"><div>Sputafuoco (Doppio 226g, frittata piccante, camembert, salsa mamba)</div><div class="menu-item-price">€ 26,00</div></div>
-  </div>
-
-  <!-- 4. BURRITOS -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🌯</div>
-    <h3 class="menu-cat-title">Burritos Academy XL</h3>
-    <div class="menu-item"><div>ALL'ARREMBAGGIO (Porchetta, risotto, cacio e pepe)</div><div class="menu-item-price">€ 19,00</div></div>
-    <div class="menu-item"><div>CAPPELLO DI PAGLIA (Fajita pollo, risotto, nuggets)</div><div class="menu-item-price">€ 20,00</div></div>
-    <div class="menu-item"><div>OLANDESE VOLANTE (Zucchine/peperoni, risotto, camembert)</div><div class="menu-item-price">€ 18,00</div></div>
-    <div class="menu-item"><div>KRAKEN (Tagliata manzo, risotto, bacon, cheddar)</div><div class="menu-item-price">€ 20,00</div></div>
-  </div>
-
-  <!-- 5. VEGGIE, GLUTEN FREE & PIATTI -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🍽️</div>
-    <h3 class="menu-cat-title">Veggie & Piatti Unici</h3>
-    <div class="menu-item"><div>NO MEAT (Vegan: Bio 100g, peperoni, zucchine)</div><div class="menu-item-price">€ 16,00</div></div>
-    <div class="menu-item"><div>NO GLUTEN (Manzo 150g, bacon, cheddar)</div><div class="menu-item-price">€ 16,00</div></div>
-    <div class="menu-item"><div>VEGGIE (Cotoletta vegetariana, remoulade, zucchine)</div><div class="menu-item-price">€ 15,00</div></div>
-    <div class="menu-item"><div>SCOTTONA (300gr + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
-    <div class="menu-item"><div>FAJITAS BURGER (Tagliata 226g + tortilla + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
-    <div class="menu-item"><div>COTOLETTA XXL (250gr + contorno)</div><div class="menu-item-price">€ 15,90</div></div>
-    <div class="menu-item"><div>CHICKEN PICK (2 spiedini pollo + contorno)</div><div class="menu-item-price">€ 16,90</div></div>
-    <div class="menu-item"><div>BEEF Salad</div><div class="menu-item-price">€ 14,00</div></div>
-    <div class="menu-item"><div>CAESAR Salad</div><div class="menu-item-price">€ 14,00</div></div>
-  </div>
-
-  <!-- 6. KIDS & BAR -->
-  <div class="menu-cat">
-    <div class="menu-cat-icon">🥤</div>
-    <h3 class="menu-cat-title">Kids, Bar & Caffetteria</h3>
-    <div class="menu-item"><div>Kids Menù (Chicco, Junior, Corn-dog)</div><div class="menu-item-price">€ 8,00 - 11,00</div></div>
-    <div class="menu-item"><div>Bibite (Acqua, Pepsi, Miranda, Seven Up, Schweppes, Thè Lipton)</div><div class="menu-item-price">Varie</div></div>
-    <div class="menu-item"><div>Aperitivi (Gin Tonic, Rum-Cola, Grog, Spritz, Prosecco)</div><div class="menu-item-price">€ 3,50 - 8,00</div></div>
-    <div class="menu-item"><div>Caffetteria (Caffè, Orzo, Ginseng, Liquori, Whisky, Grappe)</div><div class="menu-item-price">€ 1,40 - 10,00</div></div>
-  </div>
-
 </section>
 
-
-
-<script src="shared-nav.js"></script>
 <script>
 function showSede(id, btn) {
   document.querySelectorAll('.sede-section').forEach(s => s.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.remove('hidden');
   btn.classList.add('active');
-  document.querySelectorAll('#' + id + ' .reveal').forEach(el => {
-    el.classList.remove('visible');
-    setTimeout(() => el.classList.add('visible'), 80);
-  });
 }
-
-// FIX AUTOMATICO: Simula il click sulla tab attiva all'avvio della pagina
-document.addEventListener('DOMContentLoaded', () => {
-  const activeTab = document.querySelector('.tab-btn.active');
-  if (activeTab) {
-    activeTab.click();
-  }
-});
 </script>
 </body>
 </html>
