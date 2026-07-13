@@ -9,12 +9,12 @@
 /* Stili invariati per mantenere la coerenza visiva con Bovolenta */
 .page-hero { min-height: 38vh; display: flex; align-items: flex-end; padding: 80px 24px 48px; position: relative; overflow: hidden; background: var(--navy-dark); }
 .page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
-.page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 var(--navy-light); }
+.page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3); }
 .yellow { color: var(--yellow); }
 .red { color: var(--red); }
 .sede-tabs-wrap { background: var(--navy); border-bottom: 4px solid var(--yellow); position: sticky; top: 0; z-index: 100; }
 .sede-tabs { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; }
-.tab-btn { font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); background: transparent; border: none; border-bottom: 2px solid transparent; padding: 16px 20px; cursor: pointer; transition: all 0.3s ease; }
+.tab-btn { font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); background: transparent; border: none; padding: 14px 20px; cursor: pointer; border-bottom: 3px solid transparent; transition: color 0.2s; }
 .tab-btn:hover { color: var(--white); }
 .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
 .sede-section { padding: 72px 24px; background: var(--cream); }
@@ -29,7 +29,9 @@
 @media(max-width:900px){ .menu-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
-<body>
+<body data-page="menu">
+
+<div id="ticker-anchor"></div>
 
 <div class="page-hero">
   <div class="page-hero-inner">
@@ -154,11 +156,11 @@
           <div class="menu-item-price">€ 23,00</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Carlo V</div><div class="menu-item-desc">DOPPIO hamburger di MANZO 230gr, nuggets di emmental e patata fritti, crema alla Charles Quint Red, BACON croccante, rucola.</div></div>
+          <div><div class="menu-item-name">Carlo V</div><div class="menu-item-desc">DOPPIO hamburger di MANZO 230gr, nuggets di emmental e patata fritti, crema alla Charles Quint Red, BACON croccante.</div></div>
           <div class="menu-item-price">€ 24,90</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Deluxe BBQ (440gr)</div><div class="menu-item-desc">Doppio burger di MANZO affumicato, PORCHETTA tipo Ariccia, cheddar cremoso, peperoni caramellati BBQ, stick polenta.</div></div>
+          <div><div class="menu-item-name">Deluxe BBQ (440gr)</div><div class="menu-item-desc">Doppio burger di MANZO affumicato, PORCHETTA tipo Ariccia, cheddar cremoso, peperoni caramellati BBQ.</div></div>
           <div class="menu-item-price">€ 26,00</div>
         </div>
         <div class="menu-item">
@@ -166,7 +168,7 @@
           <div class="menu-item-price">€ 28,00</div>
         </div>
         <div class="menu-item" style="border: 2px solid var(--red); padding: 6px; background: var(--yellow-pale);">
-          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo. (Peso complessivo 640gr)</div></div>
+          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo.</div></div>
           <div class="menu-item-price">€ 30,00</div>
         </div>
       </div>
@@ -194,7 +196,7 @@
       <div class="menu-cat">
         <div class="menu-cat-icon"></div>
         <h3 class="menu-cat-title">Chicago's Pizza</h3>
-        <p class="menu-note" style="margin-top:-4px; margin-bottom:12px;">Soffice e fragrante stile USA (700g-900g) con bordo ripieno di crema al formaggio, base pomodoro saporito, white &amp; orange cheddar</p>
+        <p class="menu-note" style="margin-top:-4px; margin-bottom:12px;">Soffice e fragrante stile USA (700g-900g) con bordo ripieno di crema al formaggio, base pomodoro saporito, white &amp; orange</p>
         
         <div class="menu-item">
           <div><div class="menu-item-name">Chicago Classic</div><div class="menu-item-desc">Salsiccia fresca.</div></div>
@@ -417,6 +419,7 @@
   </div>
 </section>
 
+<script src="shared-nav.js"></script>
 <script>
 function showSede(id, btn) {
   document.querySelectorAll('.sede-section').forEach(s => s.classList.add('hidden'));
