@@ -9,12 +9,13 @@
 /* Stili invariati per mantenere la coerenza visiva con Bovolenta */
 .page-hero { min-height: 38vh; display: flex; align-items: flex-end; padding: 80px 24px 48px; position: relative; overflow: hidden; background: var(--navy-dark); }
 .page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
-.page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3); }
+.page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 var(--navy-light); }
 .yellow { color: var(--yellow); }
 .red { color: var(--red); }
 .sede-tabs-wrap { background: var(--navy); border-bottom: 4px solid var(--yellow); position: sticky; top: 0; z-index: 100; }
 .sede-tabs { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; }
-.tab-btn { font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); background: transparent; border: none; border-bottom: 4px solid transparent; padding: 16px 26px; cursor: pointer; }
+.tab-btn { font-family: var(--font-oswald); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); background: transparent; border: none; border-bottom: 2px solid transparent; padding: 16px 20px; cursor: pointer; transition: all 0.3s ease; }
+.tab-btn:hover { color: var(--white); }
 .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
 .sede-section { padding: 72px 24px; background: var(--cream); }
 .sede-section.hidden { display: none; }
@@ -50,7 +51,7 @@
   <div class="sede-inner">
     <h2 class="sede-title">Sede di <span class="red">Bovolenta</span></h2>
     
-    <div class="menu-grid reveal">
+    <div class="menu-grid">
 
       <!-- COLONNA 1: BURGER XXL (I CLASSICI) -->
       <div class="menu-cat">
@@ -137,7 +138,7 @@
           <div class="menu-item-price">€ 20,00</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Carbonara</div><div class="menu-item-desc">Hamburger di MANZO 230gr, rigatoni pasticciati alla carbonara, GUANCIALE di Norcia croccante, avvolto da cremosa salsa carbonara.</div></div>
+          <div><div class="menu-item-name">Carbonara</div><div class="menu-item-desc">Hamburger di MANZO 230gr, rigatoni pasticciati alla carbonara, GUANCIALE di Norcia croccante, avvolto da cremosa salsa.</div></div>
           <div class="menu-item-price">€ 20,00</div>
         </div>
         <div class="menu-item">
@@ -153,11 +154,11 @@
           <div class="menu-item-price">€ 23,00</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Carlo V</div><div class="menu-item-desc">DOPPIO hamburger di MANZO 230gr, nuggets di emmental e patata fritti, crema alla Charles Quint Red, BACON croccante, funghi misti di bosco, cheddar.</div></div>
+          <div><div class="menu-item-name">Carlo V</div><div class="menu-item-desc">DOPPIO hamburger di MANZO 230gr, nuggets di emmental e patata fritti, crema alla Charles Quint Red, BACON croccante, rucola.</div></div>
           <div class="menu-item-price">€ 24,90</div>
         </div>
         <div class="menu-item">
-          <div><div class="menu-item-name">Deluxe BBQ (440gr)</div><div class="menu-item-desc">Doppio burger di MANZO affumicato, PORCHETTA tipo Ariccia, cheddar cremoso, peperoni caramellati BBQ, stick di pollo affumicato e miele.</div></div>
+          <div><div class="menu-item-name">Deluxe BBQ (440gr)</div><div class="menu-item-desc">Doppio burger di MANZO affumicato, PORCHETTA tipo Ariccia, cheddar cremoso, peperoni caramellati BBQ, stick polenta.</div></div>
           <div class="menu-item-price">€ 26,00</div>
         </div>
         <div class="menu-item">
@@ -165,7 +166,7 @@
           <div class="menu-item-price">€ 28,00</div>
         </div>
         <div class="menu-item" style="border: 2px solid var(--red); padding: 6px; background: var(--yellow-pale);">
-          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo. (Peso complessivo: 1kg circa!)</div></div>
+          <div><div class="menu-item-name" style="color: var(--red);">Academy XXL</div><div class="menu-item-desc">DOPPIO hamburger di MANZO SCOTTONA da 300gr, BACON, rucola, cheddar, uovo. (Peso complessivo 640gr)</div></div>
           <div class="menu-item-price">€ 30,00</div>
         </div>
       </div>
