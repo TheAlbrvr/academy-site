@@ -21,7 +21,7 @@
   <a href="menu.html"     class="${p==='menu'     ?'active':''}">📋 Menù & Sedi</a>
   <a href="sfide.html"    class="${p==='sfide'    ?'active':''}">🏆 Le Sfide</a>
   <a href="contatti.html" class="${p==='contatti' ?'active':''}">📞 Contatti</a>
-  <a href="https://www.cooperto.link/e19e38" target="_blank" style="color:var(--yellow)">🛒 Ordina Online</a>
+  <a href="https://www.cooperto.link/e19e38" target="_blank" style="color:var(--yellow)">🛒 Prenota ora</a>
 </div>`;
 
   const ticker = `
