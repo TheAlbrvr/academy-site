@@ -6,7 +6,7 @@
 <title>Le Sfide — ACADEMY Evergreen Burger</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1[...]" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ============================================================
@@ -91,27 +91,20 @@
 
 /* Giant featured card */
 .sfida-featured {
-  display: grid; grid-template-columns: 1.1fr 1fr;
   border: 4px solid var(--navy); background: var(--white);
   box-shadow: 8px 8px 0 var(--navy-dark); margin-bottom: 28px;
   overflow: hidden;
 }
-.sfida-img {
-  background: var(--cream-dark);
-  display: flex; align-items: center; justify-content: center;
-  min-height: 360px; position: relative;
-}
 .sfida-label-top {
-  position: absolute; top: 14px; left: -6px;
+  position: relative; display: inline-block;
   background: var(--red); color: var(--white);
   font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04em;
   padding: 6px 20px 6px 24px;
-  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 8px) 100%, 8px 100%);
   box-shadow: 3px 3px 0 var(--red-dark);
+  margin-bottom: 20px;
 }
 .sfida-body {
-  padding: 40px 36px; display: flex; flex-direction: column; justify-content: center;
-  border-left: 4px solid var(--navy);
+  padding: 40px 36px;
 }
 .sfida-eyebrow {
   font-family: var(--font-oswald); font-weight: 700; font-size: 0.72rem;
@@ -178,10 +171,6 @@
 .sfida-card-price {
   font-family: var(--font-display); font-size: 1.5rem; color: var(--white);
   text-shadow: 1px 1px 0 var(--navy-dark);
-}
-.sfida-card-img {
-  aspect-ratio: 4/3; background: var(--cream-dark);
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .sfida-card-body { padding: 20px; }
 .sfida-card-title {
@@ -251,9 +240,6 @@
 .sfide-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
 @media(max-width:900px){
-  .sfida-featured { grid-template-columns:1fr; }
-  .sfida-img      { min-height:220px; }
-  .sfida-body     { border-left:none; border-top:4px solid var(--navy); padding:24px; }
   .sfide-grid     { grid-template-columns:1fr 1fr; }
   .wof-grid       { grid-template-columns:1fr 1fr; }
 }
@@ -293,11 +279,8 @@
   <div class="sfide-inner">
 
     <div class="sfida-featured reveal">
-      <div class="sfida-img">
-        <div class="sfida-label-top">★ The Giant ★</div>
-        <div class="img-ph"><span class="icon">🍔</span><p>Foto The Giant<br>(img/sfida-giant.jpg)</p></div>
-      </div>
       <div class="sfida-body">
+        <div class="sfida-label-top">★ The Giant ★</div>
         <div class="sfida-eyebrow">Sfida Principale</div>
         <h2 class="sfida-title">THE GIANT</h2>
         <div class="sfida-specs">
@@ -326,9 +309,6 @@
           <span class="sfida-card-tag">🔥 Super Piccante!!!</span>
           <span class="sfida-card-price">€23</span>
         </div>
-        <div class="sfida-card-img">
-          <div class="img-ph"><span class="icon">🔥</span><p>Foto Lucifer<br>(img/sfida-lucifer.jpg)</p></div>
-        </div>
         <div class="sfida-card-body">
           <h3 class="sfida-card-title">LUCIFER</h3>
           <div class="sfida-card-specs">
@@ -348,9 +328,6 @@
         <div class="sfida-card-header">
           <span class="sfida-card-tag">⭐ Sfida Classica</span>
           <span class="sfida-card-price">€34</span>
-        </div>
-        <div class="sfida-card-img">
-          <div class="img-ph"><span class="icon">🌭</span><p>Foto Würstel-One<br>(img/sfida-wurstel.jpg)</p></div>
         </div>
         <div class="sfida-card-body">
           <h3 class="sfida-card-title">WÜRSTEL-ONE</h3>
@@ -372,9 +349,6 @@
           <span class="sfida-card-tag">👑 La Sfida del Re</span>
           <span class="sfida-card-price">€42</span>
         </div>
-        <div class="sfida-card-img">
-          <div class="img-ph"><span class="icon">🍔</span><p>Foto Re Carbonara<br>(img/sfida-carbonara.jpg)</p></div>
-        </div>
         <div class="sfida-card-body">
           <h3 class="sfida-card-title">RE CARBONARA</h3>
           <div class="sfida-card-specs">
@@ -382,19 +356,18 @@
             <div class="sfida-card-spec">⏱ 25 min</div>
           </div>
           <p class="sfida-card-desc">
-            Pane carbonara al carbone con bacon, uovo e pepe di nostra produzione, <strong>Hamburger di Manzo 600gr!</strong> Pasta carbonara pasticciata homemade, guanciale croccante, patate fritte al pepe, sbriciolata di bacon, crema al cheddar.
+            Pane carbonara al carbone con bacon, uovo e pepe di nostra produzione, <strong>Hamburger di Manzo 600gr!</strong> Pasta carbonara pasticciata homemade, guanciale croccante, patate fri[...]
           </p>
           <p style="font-family:var(--font-marker);font-size:.88rem;color:var(--red);margin-bottom:8px;">Hai 25 minuti per entrare nell'Impero!</p>
           <div class="sfida-card-reward">🏆 SE VINCI TI REGALIAMO IL PANINO!</div>
         </div>
       </div>
 
-    </div><div class="sfida-featured reveal" style="margin-top:28px; border-color:var(--red); box-shadow:8px 8px 0 var(--red-dark);">
-      <div class="sfida-img">
-        <div class="sfida-label-top" style="background:var(--navy);">★ SOLO SU PRENOTAZIONE ★</div>
-        <div class="img-ph"><span class="icon">💀</span><p>Foto The Killer<br>(img/sfida-killer.jpg)</p></div>
-      </div>
+    </div>
+
+    <div class="sfida-featured reveal" style="margin-top:28px; border-color:var(--red); box-shadow:8px 8px 0 var(--red-dark);">
       <div class="sfida-body" style="border-left-color:var(--red);">
+        <div class="sfida-label-top" style="background:var(--navy);">★ SOLO SU PRENOTAZIONE ★</div>
         <div class="sfida-eyebrow" style="color:var(--navy);">⚠️ Solo su prenotazione</div>
         <h2 class="sfida-title" style="color:var(--red);">THE KILLER</h2>
         <div class="sfida-specs">
@@ -404,7 +377,7 @@
           <div class="sfida-spec red-spec">⏱ 1 ora</div>
           <div class="sfida-spec red-spec">€60,00</div>
         </div>
-        <div class="sfida-time-badge" style="background:var(--navy);border-color:var(--navy-dark);box-shadow:3px 3px 0 var(--navy-dark);">AMMAZZA IL KILLER! Finiscilo in 1 ora senza mai alzarti dal tavolo!</div>
+        <div class="sfida-time-badge" style="background:var(--navy);border-color:var(--navy-dark);box-shadow:3px 3px 0 var(--navy-dark);">AMMAZZA IL KILLER! Finiscilo in 1 ora senza mai alzarti d[...]
         <p class="sfida-desc">
           <strong>6 Hamburger (SEI!!!) di Manzo da 230gr</strong>, Bacon, cheddar, più 2 ingredienti a scelta.
         </p>
