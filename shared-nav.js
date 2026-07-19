@@ -13,7 +13,7 @@
     <li><a href="sfide.html"    class="${p==='sfide'    ?'active':''}">Le Sfide</a></li>
     <li><a href="contatti.html" class="${p==='contatti' ?'active':''}">Contatti</a></li>
   </ul>
-  <a href="https://www.cooperto.link/e19e38" target="_blank" class="nav-cta">🛒 Ordina ora</a>
+  <a href="https://www.cooperto.link/e19e38" target="_blank" class="nav-cta">🛒 Prenota ora</a>
   <div class="nav-hamburger" id="hamburgerBtn"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
