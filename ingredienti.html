@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Area Riservata - Ingredienti</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        #contenuto-riservato { display: none; } /* Nasconde il contenuto all'inizio */
+    </style>
+</head>
+<body>
+
+    <!-- Area di login iniziale -->
+    <div id="box-login">
+        <h2>Inserisci la password per accedere</h2>
+        <input type="password" id="password-input" placeholder="Password...">
+        <button onclick="verificaPassword()">Accedi</button>
+        <p id="errore" style="color: red; display: none;">Password errata!</p>
+    </div>
+
+    <!-- Il contenuto vero e proprio (es. la lista degli ingredienti) -->
+    <div id="contenuto-riservato">
+        <h1>Elenco Ingredienti Academy</h1>
+        <p>Qui metti la tua tabella, il testo o il link per scaricare il file.</p>
+        <!-- Esempio di tabella o file -->
+        <ul>
+            <li>Prodotto A: Ingredienti...</li>
+            <li>Prodotto B: Ingredienti...</li>
+        </ul>
+    </div>
+
+    <script>
+        function verificaPassword() {
+            // Sostituisci "laTuaPassword123" con la password che preferisci
+            var passwordCorretta = "zioedo"; 
+            var inputUtente = document.getElementById("password-input").value;
+
+            if (inputUtente === passwordCorretta) {
+                // Nasconde il box di login e mostra il contenuto
+                document.getElementById("box-login").style.display = "none";
+                document.getElementById("contenuto-riservato").style.display = "block";
+            } else {
+                // Mostra il messaggio di errore
+                document.getElementById("errore").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
