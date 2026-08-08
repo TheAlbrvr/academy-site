@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizzatore PDF</title>
     <style>
-        /* Imposta lo sfondo della pagina come quello tipico dei lettori PDF */
-        body { 
-            font-family: sans-serif; 
+        html, body { 
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Grigio chiaro standard dei visualizzatori */
-            overflow: hidden; /* Impedisce la doppia barra di scorrimento */
+            width: 100%;
+            height: 100%;
+            background-color: #525659; /* Grigio scuro tipico dei lettori PDF */
+            overflow: hidden;
         }
 
-        /* Contenitore a schermo intero per il PDF */
         #contenuto-riservato { 
             width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         } 
 
         iframe {
@@ -33,8 +29,7 @@
 <body>
 
     <div id="contenuto-riservato">
-        <!-- Uso PDF.js per garantire compatibilità dei link su mobile -->
-        <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=libro.pdf">
+        <iframe src="libro.pdf#toolbar=1&navpanes=0">
             <p>Il tuo browser non supporta la visualizzazione dei PDF. 
                <a href="libro.pdf">Clicca qui per scaricare il file.</a>
             </p>
