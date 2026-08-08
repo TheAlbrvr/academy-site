@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizzatore PDF</title>
+    <title>Area Riservata - Ingredienti</title>
     <style>
         html, body { 
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #333333;
-            overflow: hidden;
+            background-color: #333333; /* Sfondo scuro per integrarsi col visualizzatore */
+            overflow: hidden; /* Evita le doppie barre di scorrimento */
         }
 
         #contenuto-riservato { 
@@ -29,9 +29,9 @@
 <body>
 
     <div id="contenuto-riservato">
-        <!-- Richiama il viewer locale passando il file PDF relativo -->
-        <iframe src="web/viewer.html?file=../libro.pdf">
-            <p>Il tuo browser non supporta la visualizzazione dei PDF. 
+        <!-- Visualizzatore PDF.js locale con percorso relativo a libro.pdf -->
+        <iframe src="pdfjs/web/viewer.html?file=../../libro.pdf">
+            <p>Il tuo browser non supporta la visualizzazione diretta dei PDF. 
                <a href="libro.pdf">Clicca qui per scaricare il file.</a>
             </p>
         </iframe>
