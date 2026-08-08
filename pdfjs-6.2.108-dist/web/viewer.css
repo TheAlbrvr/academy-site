@@ -8160,3 +8160,23 @@ dialog :link{
     display:none;
   }
 }
+/* Nasconde i pulsanti di Stampa (principale e menu secondario) */
+#print, 
+#secondaryPrint {
+    display: none !important;
+}
+
+/* Nasconde i pulsanti di Download/Salva */
+/*#download, 
+#secondaryDownload {
+    display: none !important;
+}
+
+/* Disabilita la selezione del testo nel documento */
+.textLayer {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    pointer-events: none !important;
+}
