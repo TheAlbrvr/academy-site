@@ -8167,7 +8167,7 @@ dialog :link{
 }
 
 /* Nasconde i pulsanti di Download/Salva */
-/*#download, 
+#download, 
 #secondaryDownload {
     display: none !important;
 }
