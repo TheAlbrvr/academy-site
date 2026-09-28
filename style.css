@@ -517,3 +517,27 @@ footer::before { content: '★★★★★'; position: absolute; bottom: -30px; 
 }
 
 .footer-logo { max-width: 150px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+
+
+/* ---- PULSANTE MENÙ ORIGINALE ---- */
+.original-menu-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.original-menu-btn {
+  font-size: 0.95rem;
+  padding: 14px 30px;
+}
+
+@media (max-width: 600px) {
+  .original-menu-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 18px;
+  }
+}

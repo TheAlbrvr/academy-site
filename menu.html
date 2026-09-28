@@ -418,13 +418,36 @@
   </div>
 </section>
 
+<!-- Pulsante per il menù originale cartaceo -->
+<div class="original-menu-wrap">
+  <a id="original-menu-button" class="btn-yellow original-menu-btn" href="pdf/menu-bovolenta.pdf" target="_blank" rel="noopener">
+    📄 Vedi il menù originale — Bovolenta
+  </a>
+</div>
+
 <script src="shared-nav.js"></script>
 <script>
+const originalMenuPdfs = {
+  bovolenta: {
+    file: 'pdf/menu-bovolenta.pdf',
+    label: '📄 Vedi il menù originale — Bovolenta'
+  },
+  valli: {
+    file: 'pdf/menu-valli.pdf',
+    label: '📄 Vedi il menù originale — Valli di Chioggia'
+  }
+};
+
 function showSede(id, btn) {
   document.querySelectorAll('.sede-section').forEach(s => s.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.remove('hidden');
   btn.classList.add('active');
+
+  const pdf = originalMenuPdfs[id];
+  const button = document.getElementById('original-menu-button');
+  button.href = pdf.file;
+  button.textContent = pdf.label;
 }
 </script>
 </body>
