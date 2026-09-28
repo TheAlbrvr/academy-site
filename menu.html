@@ -6,8 +6,25 @@
 <title>Menù &amp; Sedi — ACADEMY Evergreen Burger</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Stili invariati per mantenere la coerenza visiva con Bovolenta */
+/* Hero del menù con foto della sede selezionata */
 .page-hero { min-height: 38vh; display: flex; align-items: flex-end; padding: 80px 24px 48px; position: relative; overflow: hidden; background: var(--navy-dark); }
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("img/locale-bovolenta.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(18,42,82,0.92) 0%, rgba(18,42,82,0.58) 48%, rgba(18,42,82,0.38) 100%);
+}
 .page-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
 .page-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.88; text-transform: uppercase; color: var(--white); text-shadow: 5px 5px 0 var(--navy), 7px 7px 0 rgba(0,0,0,0.3); }
 .yellow { color: var(--yellow); }
@@ -34,6 +51,7 @@
 <div id="ticker-anchor"></div>
 
 <div class="page-hero">
+  <div class="page-hero-bg" id="page-hero-bg" aria-hidden="true"></div>
   <div class="page-hero-inner">
     <h1 class="page-hero-title">Menù &amp;<br><span class="yellow">Sedi</span></h1>
   </div>
@@ -438,6 +456,11 @@ const originalMenuPdfs = {
   }
 };
 
+const sedePhotos = {
+  bovolenta: 'img/locale-bovolenta.jpg',
+  valli: 'img/locale-valli.jpg'
+};
+
 function showSede(id, btn) {
   document.querySelectorAll('.sede-section').forEach(s => s.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -448,6 +471,14 @@ function showSede(id, btn) {
   const button = document.getElementById('original-menu-button');
   button.href = pdf.file;
   button.textContent = pdf.label;
+
+  // Cambia la foto della sede nell'hero con una piccola dissolvenza.
+  const heroBg = document.getElementById('page-hero-bg');
+  heroBg.style.opacity = '0';
+  setTimeout(() => {
+    heroBg.style.backgroundImage = `url("${sedePhotos[id]}")`;
+    heroBg.style.opacity = '0.55';
+  }, 180);
 }
 </script>
 </body>
