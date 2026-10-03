@@ -5,7 +5,7 @@
   const nav = `
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-  <img src="academy-img.png" alt="ACADEMY Evergreen Burger" width="30%" height="auto" >
+  <img src="img/academy-img.png" alt="ACADEMY Evergreen Burger" width="30%" height="auto" >
   </a>
   <ul class="nav-links">
     <li><a href="index.html"    class="${p==='home'     ?'active':''}">Home</a></li>
@@ -52,7 +52,7 @@ const footer = `
   <div class="footer-grid">
     
     <div class="footer-col">
-      <img src="academy-img.png" alt="Academy Logo" class="footer-logo">
+      <img src="img/academy-img.png" alt="Academy Logo" class="footer-logo">
       <p>L'originale Evergreen Burger. Qualità, porzioni XXL e una passione senza compromessi per il gusto autentico.</p>
     </div>
 
